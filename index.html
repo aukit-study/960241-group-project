@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuadraCraft Studio — Premium Software House specializing in POS Systems, Web & Mobile Applications, Cloud Solutions, and Business Intelligence Dashboards.">
+  <meta property="og:title" content="QuadraCraft Studio — Four Disciplines. One Vision.">
+  <meta property="og:description" content="Crafting scalable digital ecosystems for enterprises. Expert team of 4 disciplines: Product, Architecture, Design, Engineering.">
+  <meta property="og:type" content="website">
+  <title>QuadraCraft Studio — Four Disciplines. One Vision. Limitless Digital Craftsmanship.</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════
+       NAVBAR
+       ════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo" aria-label="QuadraCraft Studio Home">
+        <span class="navbar__logo-icon">Q</span>
+        <span>QuadraCraft</span>
+      </a>
+
+      <div class="navbar__links" id="navLinks">
+        <a href="#services" class="navbar__link">Services</a>
+        <a href="#case-studies" class="navbar__link">Works</a>
+        <a href="#team" class="navbar__link">Team</a>
+        <a href="#contact" class="navbar__link">Contact</a>
+        <a href="#contact" class="navbar__cta desktop-only">
+          Start a Project
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" class="navbar__link">Services</a>
+    <a href="#case-studies" class="navbar__link">Works</a>
+    <a href="#team" class="navbar__link">Team</a>
+    <a href="#contact" class="navbar__link">Contact</a>
+    <a href="#contact" class="navbar__cta">Start a Project</a>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
+       HERO SECTION
+       ════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="bg-grid"></div>
+    <div class="container">
+      <div class="hero__grid">
+        <!-- Left: Content -->
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="pulse-dot"></span>
+            Available for new projects — 2026
+          </div>
+
+          <h1 class="hero__title">
+            Crafting Scalable<br>
+            <span class="text-gradient">Software Ecosystems</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            We are QuadraCraft Studio — a team of four specialists in Product, Architecture, Design, and Engineering — united to build enterprise-grade digital solutions that drive businesses forward.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#case-studies" class="btn btn--primary btn--lg" id="hero-cta-works">
+              Explore Our Works
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--secondary btn--lg" id="hero-cta-contact">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Terminal -->
+        <div class="hero__terminal-wrapper">
+          <div class="terminal" id="heroTerminal">
+            <div class="terminal__header">
+              <span class="terminal__dot terminal__dot--red"></span>
+              <span class="terminal__dot terminal__dot--yellow"></span>
+              <span class="terminal__dot terminal__dot--green"></span>
+              <span class="terminal__title">quadracraft — deploy.sh</span>
+              <span class="terminal__status">
+                <span class="pulse-dot"></span>
+                live
+              </span>
+            </div>
+            <div class="terminal__body" id="terminalBody">
+              <!-- Lines will be typed by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       STATS BAR
+       ════════════════════════════════════════════════════════════ -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stats__item reveal">
+          <div class="stats__number">
+            <span class="counter" data-target="50">0</span><span class="accent">+</span>
+          </div>
+          <div class="stats__label">Projects Delivered</div>
+        </div>
+        <div class="stats__item reveal reveal-delay-1">
+          <div class="stats__number">
+            <span class="counter" data-target="13000">0</span><span class="accent">+</span>
+          </div>
+          <div class="stats__label">Active POS Nodes</div>
+        </div>
+        <div class="stats__item reveal reveal-delay-2">
+          <div class="stats__number">
+            <span class="counter" data-target="4">0</span>
+          </div>
+          <div class="stats__label">Expert Disciplines</div>
+        </div>
+        <div class="stats__item reveal reveal-delay-3">
+          <div class="stats__number">
+            <span class="counter" data-target="99">0</span><span class="accent">%</span>
+          </div>
+          <div class="stats__label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SERVICES SECTION
+       ════════════════════════════════════════════════════════════ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="services__header">
+        <span class="section-eyebrow">What We Build</span>
+        <h2 class="section-title">Core Services</h2>
+        <p class="section-subtitle">
+          From retail ecosystems to enterprise cloud infrastructure — we architect,
+          design, and engineer solutions that scale with your business.
+        </p>
+      </div>
+
+      <div class="services__grid">
+        <!-- Flagship: POS -->
+        <div class="service-card service-card--flagship reveal">
+          <div class="service-card__icon">🏪</div>
+          <h3 class="service-card__title">Enterprise POS & Retail</h3>
+          <p class="service-card__desc">
+            Intelligent point-of-sale ecosystems with real-time inventory sync, multi-branch management, and offline-first architecture for nationwide retail chains.
+          </p>
+        </div>
+
+        <!-- Web Apps -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-card__icon">🖥️</div>
+          <h3 class="service-card__title">Web Applications</h3>
+          <p class="service-card__desc">
+            High-performance web platforms built with modern architecture, from admin dashboards to customer-facing portals.
+          </p>
+        </div>
+
+        <!-- Mobile -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-card__icon">📱</div>
+          <h3 class="service-card__title">Mobile Apps</h3>
+          <p class="service-card__desc">
+            Cross-platform mobile applications for iOS and Android with native-level performance and fluid interactions.
+          </p>
+        </div>
+
+        <!-- Cloud -->
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-card__icon">☁️</div>
+          <h3 class="service-card__title">Cloud & DevOps</h3>
+          <p class="service-card__desc">
+            Scalable infrastructure design, CI/CD pipelines, and cloud-native deployment for high-availability systems.
+          </p>
+        </div>
+
+        <!-- BI Dashboard -->
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-card__icon">📊</div>
+          <h3 class="service-card__title">BI & Analytics</h3>
+          <p class="service-card__desc">
+            Real-time dashboards and data pipelines that transform raw numbers into actionable business intelligence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       CASE STUDIES
+       ════════════════════════════════════════════════════════════ -->
+  <section class="section section--dark" id="case-studies">
+    <div class="bg-grid"></div>
+    <div class="container">
+      <div class="cases__header">
+        <span class="section-eyebrow">Selected Works</span>
+        <h2 class="section-title">Case Studies</h2>
+        <p class="section-subtitle">
+          Real-world solutions we've crafted for enterprises across industries —
+          from retail chains to healthcare networks.
+        </p>
+      </div>
+
+      <!-- Featured: 7-Eleven POS -->
+      <div class="cases__featured reveal">
+        <div class="case-card case-card--featured">
+          <div class="case-card__image" id="case-featured-image">
+            <img src="assets/images/pos-mockup.png" alt="NexPOS 360 — POS System Dashboard" onerror="this.style.display='none'; this.parentElement.querySelector('.case-card__image-placeholder').style.display='flex';">
+            <span class="case-card__image-placeholder" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center;">🏪</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__client">7-Eleven Thailand</span>
+            <h3 class="case-card__title">NexPOS 360 — Distributed Retail POS System</h3>
+            <p class="case-card__desc">
+              A comprehensive point-of-sale ecosystem serving 13,000+ branches nationwide. Features real-time inventory synchronization, offline-first transaction processing, and centralized reporting with sub-second latency across all nodes.
+            </p>
+            <div class="case-card__tags">
+              <span class="tag tag--accent">POS</span>
+              <span class="tag">Microservices</span>
+              <span class="tag">Real-time Sync</span>
+              <span class="tag">Offline-First</span>
+              <span class="tag">Cloud Native</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid: Other Cases -->
+      <div class="cases__grid">
+        <!-- E-Commerce -->
+        <div class="case-card reveal">
+          <div class="case-card__image">
+            <img src="assets/images/ecommerce-mockup.png" alt="OmniStore E-Commerce Platform" onerror="this.style.display='none'; this.parentElement.querySelector('.case-card__image-placeholder').style.display='flex';">
+            <span class="case-card__image-placeholder" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center;">🛒</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__client">Fashion & Lifestyle Group</span>
+            <h3 class="case-card__title">OmniStore Cloud Commerce</h3>
+            <p class="case-card__desc">
+              High-traffic e-commerce platform handling flash sales with 10K+ concurrent users, integrated warehouse management, and multi-channel order fulfillment.
+            </p>
+            <div class="case-card__tags">
+              <span class="tag tag--accent">E-Commerce</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">AWS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clinic -->
+        <div class="case-card reveal reveal-delay-1">
+          <div class="case-card__image">
+            <img src="assets/images/clinic-mockup.png" alt="CareSync Pro Medical Management" onerror="this.style.display='none'; this.parentElement.querySelector('.case-card__image-placeholder').style.display='flex';">
+            <span class="case-card__image-placeholder" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center;">🏥</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__client">Private Clinic Network</span>
+            <h3 class="case-card__title">CareSync Pro</h3>
+            <p class="case-card__desc">
+              End-to-end clinic management: appointment scheduling, electronic medical records, pharmacy inventory, and patient communication portal.
+            </p>
+            <div class="case-card__tags">
+              <span class="tag tag--accent">Healthcare</span>
+              <span class="tag">HIPAA</span>
+              <span class="tag">React</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="case-card reveal reveal-delay-2">
+          <div class="case-card__image">
+            <img src="assets/images/dashboard-mockup.png" alt="InsightPulse Analytics Dashboard" onerror="this.style.display='none'; this.parentElement.querySelector('.case-card__image-placeholder').style.display='flex';">
+            <span class="case-card__image-placeholder" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center;">📈</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__client">F&B Franchise Chain</span>
+            <h3 class="case-card__title">InsightPulse Analytics</h3>
+            <p class="case-card__desc">
+              Real-time sales analytics engine with predictive demand forecasting, customer behavior heatmaps, and automated KPI reporting for franchise operators.
+            </p>
+            <div class="case-card__tags">
+              <span class="tag tag--accent">Analytics</span>
+              <span class="tag">D3.js</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       TEAM PREVIEW
+       ════════════════════════════════════════════════════════════ -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="team-preview__header">
+        <span class="section-eyebrow">The Quadra Squad</span>
+        <h2 class="section-title">Meet Our Team</h2>
+        <p class="section-subtitle">
+          Four disciplines working in harmony — from product strategy to quality assurance,
+          every project is guided by complementary expertise.
+        </p>
+      </div>
+
+      <div class="team-preview__grid">
+        <!-- Member 1: PM/PO -->
+        <div class="team-card reveal">
+          <div class="team-card__avatar team-card__avatar--pm">PM</div>
+          <h3 class="team-card__name">Member 1</h3>
+          <div class="team-card__role">Product Owner / PM</div>
+          <p class="team-card__bio">Driving product vision, managing roadmaps, and orchestrating team delivery.</p>
+          <a href="portfolios/member1-pm/index.html" class="team-card__link">
+            View Portfolio
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Member 2: SA -->
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-card__avatar team-card__avatar--sa">SA</div>
+          <h3 class="team-card__name">Member 2</h3>
+          <div class="team-card__role">System Analyst / Architect</div>
+          <p class="team-card__bio">Designing system architecture, data flows, and technical specifications.</p>
+          <a href="portfolios/member2-sa/index.html" class="team-card__link">
+            View Portfolio
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Member 3: Designer -->
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-card__avatar team-card__avatar--designer">UX</div>
+          <h3 class="team-card__name">Member 3</h3>
+          <div class="team-card__role">Lead UI/UX Designer</div>
+          <p class="team-card__bio">Crafting visual systems, design tokens, and seamless user experiences.</p>
+          <a href="portfolios/member3-designer/index.html" class="team-card__link">
+            View Portfolio
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Member 4: Dev/QA -->
+        <div class="team-card reveal reveal-delay-3">
+          <div class="team-card__avatar team-card__avatar--dev">QA</div>
+          <h3 class="team-card__name">Member 4</h3>
+          <div class="team-card__role">Senior Dev & QA Lead</div>
+          <p class="team-card__bio">Engineering robust frontends and ensuring pixel-perfect quality at every breakpoint.</p>
+          <a href="portfolios/member4-dev/index.html" class="team-card__link">
+            View Portfolio
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-preview__footer reveal">
+        <a href="team.html" class="btn btn--secondary btn--lg" id="team-view-all">
+          View Full Team Page
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       CTA / CONTACT SECTION
+       ════════════════════════════════════════════════════════════ -->
+  <section class="section section--dark cta-section" id="contact">
+    <div class="bg-grid"></div>
+    <div class="container">
+      <span class="section-eyebrow" style="justify-content:center;">Let's Build Together</span>
+      <h2 class="cta-section__title reveal">
+        Ready to engineer your<br>
+        <span class="text-gradient">next breakthrough?</span>
+      </h2>
+      <p class="cta-section__subtitle reveal reveal-delay-1">
+        Whether it's a retail POS system, a cloud-native platform, or a data-driven dashboard —
+        our team of four disciplines is ready to bring your vision to life.
+      </p>
+
+      <div class="cta-section__actions reveal reveal-delay-2">
+        <a href="mailto:hello@quadracraft.studio" class="btn btn--primary btn--lg" id="cta-start-project">
+          Start a Project
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="#case-studies" class="btn btn--secondary btn--lg" id="cta-view-works">
+          View Our Works
+        </a>
+      </div>
+
+      <div class="cta-section__contacts reveal reveal-delay-3">
+        <a href="mailto:hello@quadracraft.studio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          hello@quadracraft.studio
+        </a>
+        <a href="tel:+6621234567">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +66 2-123-4567
+        </a>
+        <a href="https://github.com/quadracraft" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand Column -->
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <span class="footer__logo-icon">Q</span>
+            <span>QuadraCraft Studio</span>
+          </div>
+          <p class="footer__desc">
+            Four Disciplines. One Vision. Limitless Digital Craftsmanship.
+            We build enterprise-grade software solutions that drive business growth.
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <a href="#hero" class="footer__link">Home</a>
+          <a href="#services" class="footer__link">Services</a>
+          <a href="#case-studies" class="footer__link">Works</a>
+          <a href="#team" class="footer__link">Team</a>
+          <a href="#contact" class="footer__link">Contact</a>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <a href="#services" class="footer__link">POS Systems</a>
+          <a href="#services" class="footer__link">Web Applications</a>
+          <a href="#services" class="footer__link">Mobile Apps</a>
+          <a href="#services" class="footer__link">Cloud & DevOps</a>
+          <a href="#services" class="footer__link">BI & Analytics</a>
+        </div>
+
+        <!-- Team -->
+        <div>
+          <h4 class="footer__heading">Team</h4>
+          <a href="team.html" class="footer__link">Meet the Team</a>
+          <a href="portfolios/member1-pm/index.html" class="footer__link">PM / Product Owner</a>
+          <a href="portfolios/member2-sa/index.html" class="footer__link">System Analyst</a>
+          <a href="portfolios/member3-designer/index.html" class="footer__link">UI/UX Designer</a>
+          <a href="portfolios/member4-dev/index.html" class="footer__link">Dev & QA Lead</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2026 QuadraCraft Studio Co., Ltd. All rights reserved.</span>
+        <div class="footer__socials">
+          <a href="https://github.com/quadracraft" class="footer__social-link" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="mailto:hello@quadracraft.studio" class="footer__social-link" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/quadracraft" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
