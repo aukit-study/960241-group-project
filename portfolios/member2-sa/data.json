@@ -1,0 +1,204 @@
+{
+  "experiences": [],
+  "projects": [
+    {
+      "id": 1782455495959,
+      "title": "NanNgai CCTV Accident Alert",
+      "role": "UXUI Design | Frontend",
+      "type": "Production Project",
+      "description": "ระบบ AI ตรวจจับอุบัติเหตุจากกล้องวงจรปิดแบบเรียลไทม์ พร้อมระบบจัดการผ่าน Web Dashboard สำหรับเจ้��หน้าที่ห้องควบคุม และระบบส่งพิกัดพร้อมวิดีโอหลักฐานไปยังหน่วยกู้ภัยในพื้นที่ผ่าน LINE OA โดยอัตโนมัติ",
+      "target_audience": "เจ้าหน้าที่ห้องควบคุม (Control Room) ของทางหลวง เทศบาล หรือตำรวจจราจร  หน่วยกู้ภัยและทีมแพทย์กู้ชีพฉุกเฉินในพื้นที่รับผิดชอบ",
+      "problem_solved": "แจ้งเหตุล่าช้า: ลดเวลาการรอคนโทรแจ้ง (1669/191) เพื่อช่วยชีวิตผู้บาดเจ็บให้ทันท่วงที (Golden Hour)  เจ้าหน้าที่ล้าสายตา: ลดช่องว่างความผิดพลาดจากการที่มนุษย์ต้องนั่งเฝ้าจอภาพกล้องจำนวนมาก (8-32 ตัว) ตลอด 24 ชั่วโมง  ข้อมูลหน้างานไม่ชัดเจน: แก้ปัญหาทีมกู้ภัยไม่ทราบสภาพความรุนแรงหรือประเภทรถก่อนไปถึงจุดเกิดเหตุ",
+      "what_i_learned": "UI/UX for Heavy Data: การออกแบบ Dynamic Grid และ Alert Sidebar ที่ลด Cognitive Load และช่วยให้เจ้าหน้าที่ตัดสินใจกด Confirm/False Alarm ได้ใน 3 วินาที\n\nBackend Optimization: การแก้ปัญหาคอขวด (GIL) ของ Python/Uvicorn โดยการจัดการ Thread/Process และทำ Video Buffer แยกออกจากระบบเว็บเพื่อไม่ให้หน้าจอแล็ก",
+      "tech_stack": "React, Next.js, Tailwind CSS, Python, FastAPI, Uvicorn, OpenCV",
+      "github_url": "https://github.com/PreturnPRO/Nan-Ngai-CCTV",
+      "is_visible": true,
+      "is_favorite": true
+    },
+    {
+      "id": 1782240199281,
+      "title": "Spa Management System ",
+      "role": "Java Developer",
+      "type": "Production Project",
+      "description": "โปรเจกต์กลุ่มประจำรายวิชา 960103 พัฒนาระบบแอปพลิเคชัน/เว็บไซต์จำลองสำหรับ บริหารจัดการธุรกิจสปา (Spa Management System) ที่ช่วยเชื่อมโยงการทำงา���ระหว่างลูกค้าและผู้ให้บริการ ตั้งแต่ระบบแสดงข้อมูลบริการ การจองคิว ไปจนถึงการจัดการข้อมูลหลังบ้านอย่างเป็นระบบ",
+      "target_audience": "เจ้าของธุรกิจ/ผู้ดูแลระบบ (Admin) ผู้ที่ต้องบริหารจัดการคิวงานของพนักงาน จัดการตารางเวลาห้องสปา และเช็กยอดการจองในแต่ละวัน, ลูกค้าผู้ใช้บริการสปา: ผู้ที่ต้องการเข้าชมเมนูบริการ",
+      "problem_solved": "ความยุ่งยากในการจองและการจัดคิวซ้อน (Overbooking): แก้ปัญหาการจองคิวแบบเดิมผ่านโทรศัพท์หรือสมุดจดที่เสี่ยงต่อการบันทึกเวลาชนกัน โดยเปลี่ยนมาใช้ระบบล็อกตารางเวลาตามห้องหรือพนักงานที่ว่างอยู่จริง การเข้าถึงข้อมูลบริการที่ยากลำบาก: ช่วยให้ลูกค้าเห็นรายละเอียดแพ็กเกจ ราคา และระยะเวลาของบริการ",
+      "what_i_learned": "การวางตรรกะระบบจองคิวและเวลา (Booking Logic): เรียนรู้การจัดการเงื่อนไขด้านเวลาและสถานะความว่าง (Availability) ของทรัพยากรที่มีจำกัด เช่น พนักงาน เตียงนวด หรือห้องบริการ\n\nการออกแบบระบบจำลองธุรกิจ (Business Process Simulation): เข้าใจขั้นตอนการดำเนินธุรกิจสปาจริง แล้วนำมาแปลงให้อยู่ในรูปแบบของระบบดิจิทัลที่ใช้งานได้ง่าย\n",
+      "tech_stack": "JAVA",
+      "github_url": "https://github.com/aukit-study/960103-Group-Project-Spa",
+      "is_visible": true,
+      "is_favorite": false
+    },
+    {
+      "id": 1782239124623,
+      "title": "School Management",
+      "role": "Frontend / UXUI Design",
+      "type": "Academic Project",
+      "description": "ออกแบบแพลตฟอร์มระบบบริหารจัดการข้อมูลภายในชั้นเรียนสำหรับครูผู้สอน พัฒนาขึ้นเพื่อช่วยอำนวยความสะดวกในการจัดเก็บข้อมูลนักเรียน เช็กชื่อเข้าชั้นเรียน และคำนวณเกรดสะสมอย่างเป็นระบบ",
+      "target_audience": "ครูและอาจารย์ผู้สอน , ฝ่ายทะเบียนหรือผู้บริหารสถานศึกษา",
+      "problem_solved": "ความยุ่งยากและข้อผิดพลาดจากการบันทึกข้อมูลด้วยมือ (Manual Error): แก้ปัญหาการเช็กชื่อและการคำนวณคะแนน/เกรดบนสมุดพกหรือกระดาษ ซึ่งเสี่ยงต่อการสูญหายและคิดคำนวณผิดพลาด โดยเปลี่ยนมาใช้ระบบดิจิทัลช่วยคำนวณอัตโนมัติ",
+      "what_i_learned": "การจัดการและจัดเก็บโครงสร้างข้อมูล (Data Structuring): เรียนรู้การวางโครงสร้างข้อมูลของนักเรียน (เช่น ชื่อ, รหัสประจำตัว, คะแนน, สถานะการเข้าเรียน) ให้มีความสัมพันธ์และเรียกใช้งานได้อย่างเป็นระบบ\n\nการคิดเชิงตรรกะและการควบคุมทิศทางโปรแกรม (Control Flow & Logic): ฝึกฝนการใช้เงื่อนไข (Conditional Statements) และลูป (Loops) ในการคำนวณเกรดตามเกณฑ์คะแนน และการนับสถิติเปอร์เซ็นต์การเข้าเรียน",
+      "tech_stack": "Javascript ,HTML ,Tailwind",
+      "github_url": "https://github.com/aukit-study/school_management",
+      "is_visible": true,
+      "is_favorite": true
+    },
+    {
+      "id": 1782238643556,
+      "title": "CCTV Face-Detected  (In Development)",
+      "role": "Frontend / Backend",
+      "type": "Academic Project",
+      "description": "แอปพลิเคชันนวัตกรรมเพื่อความปลอดภั���ทางสังคม พัฒนาขึ้นเพื่อช่วยค้นหาและติดตามผู้สูญหายแบบ Real-time โดยการประยุกต์ใช้เทคโนโลยีปัญญาประดิษฐ์ (AI) ในการตรวจจับและจดจำใบหน้า (Face Recognition) ผ่านการเชื่อมต่อกับสัญญาณภาพจากกล้อง CCTV เพื่อเพิ่มประสิทธิภาพและความรวดเร็วในการช่วยเหลือ\n\nปัจจุบันโครงการนี้อยู่ระหว่างการวิจัยและพัฒนาส่วนขยาย (R&D) เพื่อเพิ่มความแม่นยำในการประมวลผล",
+      "target_audience": "หน่วยงานบังคับใช้กฎหมายและกู้ภัย: เจ้าหน้าที่ตำรวจ, มูลนิธิกระจกเงา หรือหน่วยงานช่วยเหลือผู้สูญหายที่ต้องการเครื่องมือช่วยคัดกรองเบาะแส",
+      "problem_solved": "ความล่าช้าในการตรวจสอบภาพจากกล้องวงจรปิด: แก้ปัญหาความเหนื่อยล้าและข้อจำกัดของมนุษย์ (Human Error) ที่ต้องมานั่งไล่ดูภาพย้อนหลังจากกล้อง CCTV หลายตัวเป็นเวลานาน โดยเปลี่ยนมาใช้ AI สแกนและตรวจจับใบหน้าอัตโนมัติ",
+      "what_i_learned": "การเทรนและการใช้งาน AI Model: ฝึกฝนการเตรียมชุดข้อมูลภาพ (Dataset) การเรียนรู้ของระบบ และการเรียกใช้สมาร์ทไลบรารี/โมเดลสำเร็จรูปที่มีความแม่นยำสูงในระดับสากล\n\nการประมวลผลข้อมูลแบบ Real-time Stream: เข้าใจสถาปัตยกรรมระบบที่ต้องรับสัญญาณภาพวิดีโอจากกล้องแบบสด ๆ (Live Stream) แล้วประมวลผลเปรียบเทียบกับฐานข���อมูลอย่างรวดเร็วโดยไม่เกิดอาการค้างหรือดีเลย์",
+      "tech_stack": "Python , HTML , CSS",
+      "github_url": "https://github.com/aukit-study/Face-Detected",
+      "is_visible": true,
+      "is_favorite": true
+    },
+    {
+      "id": 1782238427792,
+      "title": "GrowGround",
+      "role": "Fullstack DEV",
+      "type": "Personal Project",
+      "description": "แพลตฟอร์มเว็บแอปพลิเคชันเพื่อการเรียนรู้ออนไลน์ พัฒนาด้วยภาษา PHP รองรับระบบการเลือกซื้อคอร์ส การสมัครสมาชิก และห้องเรียนออนไลน์จำลองสำหรับผู้เรียน ควบคู่ไปกับระบบบริหารจัดการข้อมูลหลังบ้าน (Management System) ที่ครอบคลุมและมีประสิทธิภาพสำหรับผู้ดูแลระบบ (Admin)",
+      "target_audience": "ผู้เรียนทั่วไป: นักเรียน นักศึกษา หรือบุคคลที่ต้องการอัปสกิลความรู้ผ่านคอร์สเรียนออนไลน์��นแพลตฟอร์มที่ใช้งานง่าย",
+      "problem_solved": "ความยุ่งยากในการเข้าถึงและจัดการคอร์สเรียน: ลดขั้นตอนการเรียนรู้ที่กระจัดกระจาย โดยการรวมระบบจัดการผู้ใช้ การเลือกซื้อ และการเข้าเรียนไว้บนหน้าเว็บเดียว (Single Platform Flow) , ข้อจำกัดในการบริหารจัดการข้อมูลแบบแมนนวล",
+      "what_i_learned": "การพัฒนา Dynamic Web Application ด้วย PHP: ฝึกฝนการใช้ PHP ร่วมกับฐานข้อมูลเพื่อสร้างเว็บที่มีการโต้ตอบและเปลี่ยนแปลงข้อมูลตามสิทธิ์การใช้งานจริงของผู้ใช้\n\nการออกแบบระบบ Back-office (Admin Dashboard): เรียนรู้การวางโครงสร้างและตรรกะระบบจัดการข้อมูล (CRUD) เพื่อให้ Admin สามารถค���บคุมหลังบ้านได้อย่างปลอดภัยและเป็นระบบ",
+      "tech_stack": "PHP , CSS , Database , SQL",
+      "github_url": "https://github.com/aukit-study/GrowGroundMMIT",
+      "is_visible": true,
+      "is_favorite": false
+    },
+    {
+      "id": 1782238299658,
+      "title": "IRONBOOTS ",
+      "role": "Fullstack DEV",
+      "type": "Personal Project",
+      "description": "แพลตฟอร์มเว็บแอปพลิเคชันสำหรับซื้อ-ขาย รองเท้าฟุตบอล ที่มาพร้อมระบบรีวิวสินค้าและระบบจัดหมวดหมู่ โดยเปลี่ยนผ่านสถาปัตยกรรมข้อมูลจากไฟล์ $PHP\\text{ Static Data}$ ไปสู่ระบบการจัดเก็บข้อมูลด้วยรูปแบบ JSON เพื่อรองรับการบันทึกข้อมูลผู้ใช้งาน ประวัติการสั่งซื้อ และการรีวิวสินค้าแบบไดนามิก (Dynamic)",
+      "target_audience": "กลุ่มผู้ซื้อ: นักฟุตบอลและผู้ที่สนใจซื้อรองเท้าฟุตบอลที่ต้องการระ��บรีวิวประกอบการตัดสินใจ และตารางเปรียบเทียบไซส์ (Size\\ Chart) ที่ชัดเจน",
+      "problem_solved": "ข้อจำกัดของ Static PHP File: แก้ปัญหาข้อจำกัดเดิมที่ไฟล์ PHP แบบดั้งเดิมไม่สามารถบันทึกหรืออัปเดตข้อมูลใหม่ ๆ ที่เกิดขึ้นจากผู้ใช้งานได้โดยตรง",
+      "what_i_learned": "ารจัดการ Session และสิทธิ์การใช้งาน: เข้าใจการรักษาข้อมูลงวดการใช้งาน (Session) เพื่อจดจำสถานะล็อกอินของผู้ใช้และการจำลองขั้นตอนการสั่งซื้อสินค้า\n\nการวางโครงสร้างข้อมูลแบบสัมพันธ์: เรียนรู้การออกแบบ Array และ Object ในรูปแบบ JSON ให้สัมพันธ์กันระหว่าง ข้อมูลสินค้า ประวัติการสั่งซื้อ และขน���ดไซส์รองเท้า ($size_chart)",
+      "tech_stack": "PHP , CSS , JSON",
+      "github_url": "https://github.com/aukit-study/IRONBOOTSMMIT",
+      "is_visible": true,
+      "is_favorite": false
+    },
+    {
+      "id": 1782238011544,
+      "title": "Webtech E-Learning Platform (TurnPro)",
+      "role": "Fullstack DEV",
+      "type": "Production Project",
+      "description": "โปรเจครายวิชา Web Technology 960121 เป็นแพลตฟอร์มคอร์สเรียนออนไลน์แบบ Full-Stack ที่สมบูรณ์แบบ รองรับการสมัครสมาชิก การซื้อคอร์สเรียน การเข้าเรียนในห้องเรียนออนไลน์ (Classroom) และระบบหลังบ้านสำหรับผู้ดูแลระบบ (Admin)",
+      "target_audience": "ผู้ที่สนใจพัฒนาความรู้ผ่านแพลตฟอร์มออนไลน์",
+      "problem_solved": "ความกระจัดกระจายและไม่เป็นระบบของสื่อการเรียนรู้ , อุปสรรคในการเข้าถึงเนื้อหาและลำดับความสำคัญของผู้เรียน",
+      "what_i_learned": "กระบวนการพัฒนาเว็บแบบ Full-Stack: เข้าใจภาพรวมการเชื่อมต่อระบบตั้งแต่หน้าบ้าน (Frontend) ไปจนถึงหลังบ้าน (Backend) และการจัดการฐานข้อมูล (Database) อย่างเป็นระบบ\n\nระบบความปลอดภัยและการจัดการสิทธิ์ (Authentication & Authorization): เรียนรู้การวางระบบสมัครสมาชิก ตรวจสอบตัวตน และการแบ่งสิทธิ์การเข้าถึงเมนูระหว่างผู้เรียนทั่วไปกับผู้ดูแลระบบ (Admin)\n\nการจัดการข้อมูลที่ซับซ้อน (Data & State Management): ฝึกฝนการดึงและจัดการข้อมูลที่มีความเกี่ยวข้องกัน เช่น ข้อมูลผู้เรียน ประวัติการซื้อคอร์ส และการนำข้อมูลมาแสดงผลเป็น Dashboard สำหรับ Admin",
+      "tech_stack": "HTML5 & CSS3 , JavaScript , Node.js & Express.js , SQLite3 , JWT",
+      "github_url": "https://github.com/aukit-study/ProjectWebtech",
+      "is_visible": true,
+      "is_favorite": true
+    }
+  ],
+  "activities": [
+    {
+      "id": 1782237379924,
+      "title": "ผ่านการฝึกอบรมหลักสูตร UX/UI Foundation Program โดย UX Academy Thailand",
+      "role": "Certifications",
+      "description": "สำเร็จการฝึกอบรมหลักสูตร UX/UI Foundation Program โดย UX Academy Thailand | พัฒนาทักษะการสร้างส��รค์ผลิตภัณฑ์ดิจิทัลและการออกแบบประสบการณ์ผู้ใช้ (User Experience) จากผู้เชี่ยวชาญ",
+      "image_url": "https://img1.pic.in.th/images/image6a1594a63ce9bc54.png",
+      "soft_skills": null,
+      "is_visible": true
+    },
+    {
+      "id": 1782236986820,
+      "title": "กิจกรรมการประกวดออกแบบผลิตภัณฑ์แผนไทย (CAMT Series 2569)",
+      "role": "Certifications",
+      "description": "เข้าร่วมการประกวดออกแบบผลิตภัณฑ์แผนไทยฯ ภายใต้หลักสูตรบูรณาการกับการทำงานจริง (WIL) ร่วมกับ รพ.ไชยปราการ และศูนย์ FIN มช. โดยมุ่งเน้นการดีไซน์เพื่อใช้งานจริงในสถานพยาบาล ควบคู่กับการผลักดันผลงานไปสู่การจดสิทธิบัตรและลิขสิทธิ์ในระดับมืออาชีพ",
+      "image_url": "https://img2.pic.in.th/imagef93ecfca6bc59402.png",
+      "soft_skills": null,
+      "is_visible": true
+    },
+    {
+      "id": 1782236454541,
+      "title": "งานศิลปหัตกรรมนักเรียน ครั้งที่ 71 2567 | รางวัลเหรียญทอง",
+      "role": "Certifications",
+      "description": " การแข่งขันหุ่นยนต์ระดับกลาง (ม.ปลาย) งานศิลปหัตถกรรมนักเรียน ครั้งที่ 71 | ออกแบบโครงสร้างและเขียนโปรแกรมควบคุมด้วย Arduino / C++ พิสูจน์ทักษะคิดเชิงวิศวกรรมและการแก้ปัญหาเฉพาะหน้าตามโจทย์กำหนด",
+      "image_url": "https://img2.pic.in.th/image78ef689ce926cd31.png",
+      "soft_skills": null,
+      "is_visible": true
+    },
+    {
+      "id": 1782236227015,
+      "title": "PSRU Cyber Hackathon #1 2566 | รางวัลรองชนะเลิศอันดับ 2",
+      "role": "Certifications",
+      "description": "เข้าร่วมอบรมเกี่ยวกับcyber security ครั้งแรกได้รับความรู้ใหม่ๆและได้แข่งขับแฮกกาธอน ซึ่งได้พัฒนาความรู้ความสามารถเกี่ยวกับCyber Security และในการแข่งขันยังได้���ึกการทำงานเป็นทีมกับเพื่อนๆและการคิดอย่างมีชั้นเชิงกลยุท",
+      "image_url": "https://img1.pic.in.th/images/image871ed8a5485684f7.png",
+      "soft_skills": null,
+      "is_visible": true
+    },
+    {
+      "id": 1782235706668,
+      "title": "PSRU Cyber Hackathon #2 2567 | ได้ระบรางวัลชนะเลิศ อันดับ 1 ",
+      "role": "Certifications",
+      "description": "ได้ระบรางวัลชนะเลิศ อันดับ 1 การแข่งขันทักษะความปลอดภัยทางไซเบอร์ (CTF) จัดโดย มรภ.พิบูลสงคราม ร่วมกับ สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ (สกมช.)",
+      "image_url": "https://img2.pic.in.th/imagec6025fe7d620c4f5.png",
+      "soft_skills": null,
+      "is_visible": true
+    },
+    {
+      "id": 1782235402418,
+      "title": "TA WORKSHOP DII Gen8 | ปีการศึกษา  2568",
+      "role": "Workshops & Events",
+      "description": "เป็นพี่ฝึกสอน ช่วยดูแลและสอนน้องๆเกี่ยวกับโค้ดและกระบวนการคิดต่างๆ��ย่างเป็นระบบเพื่อคัดเข้าศึกษาต่อเป็น DII Gen8",
+      "image_url": "https://img2.pic.in.th/image2f46c96e38d5f281.png",
+      "soft_skills": null,
+      "is_visible": true
+    },
+    {
+      "id": 1782234875958,
+      "title": "Seminar: Intelligent Automation (ร่วมกับ บริษัท ไซเจ็น จำกัด - Zygen)",
+      "role": "Workshops & Events",
+      "description": "เข้าร่วมฟังบรรยายพิเศษหัวข้อ “Intelligent Automation” โดยผู้เชี่ยวชาญจากบริษัท Zygen เพื่อศึกษาการนำเทคโนโลยี RPA, AI และ LCAP มาประยุกต์ใช้จัดการระบบอัตโนมัติและแก้ปัญหาในภาคธุรกิจและอุตสาหกรรมจริง",
+      "image_url": "https://img1.pic.in.th/images/imagec3b64d084c16f6cb.png",
+      "soft_skills": null,
+      "is_visible": true
+    },
+    {
+      "id": 1782234788530,
+      "title": "Workshop: Data Storytelling & Dashboard Design (ร่วมกับ บริษัท ไซเจ็น จำกัด - Zygen)",
+      "role": "Workshops & Events",
+      "description": "เข้าร่วมเวิร์กชอป “Data Storytelling & Dashboard Design” โดยผู้เชี่ยว��าญจากบริษัท Zygen เพื่อพัฒนาทักษะการวิเคราะห์ สรุปผลข้อมูลเชิงธุรกิจ และการออกแบบ Dashboard ที่ตอบโจทย์การใช้งานจริงในภาคอุตสาหกรรม",
+      "image_url": "https://img2.pic.in.th/imagecc373ad5de8a6f17.png",
+      "soft_skills": null,
+      "is_visible": true
+    },
+    {
+      "id": 1782234637228,
+      "title": "การออกแบบผลิตภัณฑ์แผนไทย พลิกโฉมสมุนไพร ใส่ดีไซน์สร้างมูลค่า (ภายใต้โครงการ CAMT Series 2569)",
+      "role": "Workshops & Events",
+      "description": "ร่วมลงพื้นที่เก็บข้อมูลและสำรวจความต้องการ ณ รพ.ไชยปราการ  เพื่อนำข้อมูลเชิงลึกมาประยุกต์ใช้ในการออกแบบ Branding และ Packaging ผลิตภัณฑ์สมุนไพรท้องถิ่น เพิ่มมูลค่าทางเศรษฐกิจอย่างยั่งยืน ภายใต้ยุทธศาสตร์ CAMT Series 2569",
+      "image_url": "https://img2.pic.in.th/image58f0599fa7eb4e69.png",
+      "soft_skills": null,
+      "is_visible": true
+    },
+    {
+      "id": 1782234400513,
+      "title": "UX/UI Foundation Program 2025 — T.C.C. Technology Co., Ltd",
+      "role": "Workshops & Events",
+      "description": "เรียนรู้และศึกษาทักษะการออกแบบ UX/UI Design กับผู้เชี่ยวชาญจาก UX Academy Thailand เพื่อนำองค์ความรู้และเทคนิคการพัฒนาผลิตภัณฑ์ดิจิทัล (Digital Product) มาประยุกต์ใช้ในการสร้างสรรค์ผลงานที่ตอบโจทย์ผู้ใช้งานจริงได้อย่างมีประสิทธิภาพ",
+      "image_url": "https://img2.pic.in.th/image2a26e0fee4c99774.png",
+      "soft_skills": null,
+      "is_visible": true
+    },
+    {
+      "id": 1782233883651,
+      "title": "The Global Lens: Crafting World-Class UX/UI with Irene Pereyra",
+      "role": "Workshops & Events",
+      "description": "ได้รับเกียรติร่วมทำ Workshop จากคุณ Irene Pereyra ผู้ร่วมก่อตั้ง Anton & Irene ดีไซน์สตูดิโอชื่อดังจากนิวยอร์ก ผู้อยู่เบื้องหลังโปรเจกต์ระดับโลกอย่าง Google Home Web App และ Spotify Global Campaign มาถ่ายทอดประสบการณ์การผสมผสานระหว่าง User Experience (UX), Visual Aesthetics และ Technology",
+      "image_url": "https://i.postimg.cc/C1DNVsLH/image.png",
+      "soft_skills": null,
+      "is_visible": true
+    }
+  ]
+}
