@@ -47,4 +47,4 @@ graph TD
 ---
 **Status:** `Completed` 
 **Next Steps for Team:**
-- แจ้ง ไตตั้น ให้เตรียมทดสอบ Responsive & QA ตาม Sitemap ใหม่นี้
+- บอก ไตตั้น ให้เตรียมทดสอบ Responsive & QA ตาม Sitemap ใหม่นี้
