@@ -4,25 +4,597 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Pantawee Thammakhun</title>
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ffffff' stroke='%23e2e8f0' stroke-width='4'/><text x='50' y='72' font-family='sans-serif' font-size='65' font-weight='bold' fill='%23111827' text-anchor='middle'>P</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/portfolio.css">
+    <title>Welcome | Pantawee Thammakhun</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ffffff' stroke='%23e2e8f0' stroke-width='4'/><text x='50' y='72' font-family='sans-serif' font-size='65' font-weight='bold' fill='%23111827' text-anchor='middle'>P</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-50: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-400: #94a3b8;
+            --gray-600: #475569;
+            --gray-900: #0f172a;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Inter', 'Sarabun', sans-serif;
+            background: var(--off-white);
+            color: var(--gray-900);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .welcome-page {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Background layers */
+        .bg-gradient {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(99, 102, 241, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 90%, rgba(148, 163, 184, 0.08) 0%, transparent 55%),
+                linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+        }
+
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(226, 232, 240, 0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 75%);
+        }
+
+        #particle-canvas {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* 3D Scene */
+        #scene-3d {
+            position: absolute;
+            inset: 0;
+            perspective: 1200px;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape-3d {
+            position: absolute;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        .cube {
+            width: 56px;
+            height: 56px;
+            top: 18%;
+            left: 12%;
+            animation: spin-cube 18s linear infinite;
+        }
+
+        .cube-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 56px;
+            height: 56px;
+            border: 1.5px solid rgba(226, 232, 240, 0.9);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.8), 0 8px 32px rgba(15, 23, 42, 0.06);
+        }
+
+        .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(28px); }
+        .cube-face:nth-child(2) { transform: rotateY(180deg) translateZ(28px); }
+        .cube-face:nth-child(3) { transform: rotateY(90deg) translateZ(28px); }
+        .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(28px); }
+        .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(28px); }
+        .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(28px); }
+
+        @keyframes spin-cube {
+            from { transform: rotateX(-20deg) rotateY(0deg); }
+            to { transform: rotateX(-20deg) rotateY(360deg); }
+        }
+
+        .ring {
+            width: 100px;
+            height: 100px;
+            top: 22%;
+            right: 14%;
+            border: 2px solid rgba(226, 232, 240, 0.8);
+            border-radius: 50%;
+            background: transparent;
+            box-shadow:
+                0 0 0 8px rgba(255,255,255,0.5),
+                0 20px 60px rgba(15, 23, 42, 0.05),
+                inset 0 0 30px rgba(255,255,255,0.9);
+            animation: spin-ring 12s linear infinite;
+        }
+
+        @keyframes spin-ring {
+            from { transform: rotateX(70deg) rotateZ(0deg); }
+            to { transform: rotateX(70deg) rotateZ(360deg); }
+        }
+
+        .sphere {
+            width: 44px;
+            height: 44px;
+            bottom: 28%;
+            left: 18%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #ffffff, #e2e8f0);
+            box-shadow:
+                0 16px 40px rgba(15, 23, 42, 0.08),
+                inset -4px -4px 12px rgba(148, 163, 184, 0.2),
+                inset 4px 4px 12px rgba(255, 255, 255, 0.9);
+        }
+
+        .prism {
+            width: 0;
+            height: 0;
+            bottom: 32%;
+            right: 16%;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 52px solid rgba(255, 255, 255, 0.85);
+            filter: drop-shadow(0 16px 32px rgba(15, 23, 42, 0.07));
+            animation: spin-prism 14s ease-in-out infinite alternate;
+        }
+
+        @keyframes spin-prism {
+            from { transform: rotateY(-30deg) rotateX(10deg); }
+            to { transform: rotateY(30deg) rotateX(-10deg); }
+        }
+
+        .dot-cluster {
+            top: 55%;
+            right: 22%;
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot-cluster span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+        }
+
+        .dot-cluster span:nth-child(2) { transform: translateY(-14px); }
+        .dot-cluster span:nth-child(3) { transform: translateY(8px); }
+
+        /* Hero card */
+        .hero-wrapper {
+            position: relative;
+            z-index: 10;
+            perspective: 1000px;
+            padding: 1.5rem;
+        }
+
+        #hero-card {
+            position: relative;
+            width: min(420px, 92vw);
+            padding: 2.5rem 2rem 2rem;
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 28px;
+            box-shadow:
+                0 0 0 1px rgba(226, 232, 240, 0.5),
+                0 4px 6px rgba(15, 23, 42, 0.02),
+                0 24px 80px rgba(15, 23, 42, 0.08),
+                0 48px 120px rgba(99, 102, 241, 0.06);
+            transform-style: preserve-3d;
+            transition: box-shadow 0.4s ease;
+            text-align: center;
+        }
+
+        #hero-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 28px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(226,232,240,0.4), rgba(99,102,241,0.15));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .avatar-frame {
+            position: relative;
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 1.5rem;
+            transform: translateZ(40px);
+        }
+
+        .avatar-ring {
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: conic-gradient(from 180deg, var(--gray-200), var(--white), var(--accent-light), var(--gray-200));
+            animation: rotate-ring 6s linear infinite;
+        }
+
+        @keyframes rotate-ring {
+            to { transform: rotate(360deg); }
+        }
+
+        .avatar-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--white);
+            box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1);
+        }
+
+        .avatar-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .welcome-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.35rem 0.85rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        }
+
+        .welcome-badge .pulse {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #22c55e;
+            animation: pulse 2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.85); }
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(1.6rem, 5vw, 2.1rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            color: var(--gray-900);
+            margin-bottom: 0.35rem;
+            transform: translateZ(30px);
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            transform: translateZ(25px);
+        }
+
+        .hero-desc {
+            font-size: 0.875rem;
+            line-height: 1.65;
+            color: var(--gray-600);
+            max-width: 320px;
+            margin: 0 auto 1.5rem;
+            transform: translateZ(20px);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.75rem;
+            transform: translateZ(15px);
+        }
+
+        .tag {
+            padding: 0.3rem 0.75rem;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--white);
+            background: var(--gray-900);
+            border: none;
+            border-radius: 14px;
+            text-decoration: none;
+            cursor: pointer;
+            transform: translateZ(35px);
+            box-shadow:
+                0 4px 14px rgba(15, 23, 42, 0.2),
+                0 0 0 1px rgba(15, 23, 42, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .cta-btn:hover {
+            background: #1e293b;
+            transform: translateZ(35px) translateY(-2px);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+        }
+
+        .cta-btn svg {
+            transition: transform 0.25s ease;
+        }
+
+        .cta-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            transform: translateZ(10px);
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--gray-200);
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+        }
+
+        .social-links a:hover {
+            color: var(--gray-900);
+            border-color: var(--gray-400);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            z-index: 5;
+            animation: fade-bounce 2.5s ease infinite;
+        }
+
+        @keyframes fade-bounce {
+            0%, 100% { opacity: 0.5; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 1; transform: translateX(-50%) translateY(6px); }
+        }
+
+        .reveal {
+            opacity: 0;
+            animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes reveal-up {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 640px) {
+            .cube, .ring, .prism { opacity: 0.5; transform: scale(0.75); }
+            .sphere { opacity: 0.6; }
+            #hero-card { padding: 2rem 1.5rem 1.75rem; border-radius: 22px; }
+            .scroll-hint { display: none; }
+        }
+
+        /* Dark Mode Overrides */
+        :root.dark-mode {
+            --white: #0F172A;
+            --off-white: #080D1A;
+            --gray-50: #0F172A;
+            --gray-200: #1E293B;
+            --gray-400: #64748B;
+            --gray-600: #94A3B8;
+            --gray-900: #F8FAFC;
+            --accent: #3B82F6;
+            --accent-light: #60A5FA;
+        }
+
+        .dark-mode .bg-gradient {
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 90%, rgba(6, 182, 212, 0.08) 0%, transparent 55%),
+                linear-gradient(180deg, #080D1A 0%, #0F172A 50%, #0A1628 100%);
+        }
+
+        .dark-mode .bg-grid {
+            background-image:
+                linear-gradient(rgba(30, 41, 59, 0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(30, 41, 59, 0.5) 1px, transparent 1px);
+        }
+
+        .dark-mode .cube-face {
+            background: rgba(15, 23, 42, 0.7);
+            border-color: rgba(30, 41, 59, 0.9);
+            box-shadow: inset 0 0 20px rgba(59,130,246,0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-mode .ring {
+            border-color: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 0 0 8px rgba(15, 23, 42, 0.5), 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-mode .sphere {
+            background: radial-gradient(circle at 35% 35%, #1E293B, #0F172A);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3), inset -4px -4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-mode .prism {
+            border-bottom-color: rgba(30, 41, 59, 0.85);
+            filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.3));
+        }
+
+        .dark-mode #hero-card {
+            background: rgba(15, 23, 42, 0.75);
+            border-color: rgba(30, 41, 59, 0.9);
+            box-shadow:
+                0 0 0 1px rgba(30, 41, 59, 0.5),
+                0 24px 80px rgba(0, 0, 0, 0.4),
+                0 48px 120px rgba(59, 130, 246, 0.1);
+        }
+
+        .dark-mode #hero-card::before {
+            background: linear-gradient(135deg, rgba(30,41,59,0.9), rgba(15,23,42,0.4), rgba(59,130,246,0.2));
+        }
+
+        .dark-mode .avatar-ring {
+            background: conic-gradient(from 180deg, var(--gray-200), var(--white), var(--accent), var(--gray-200));
+        }
+
+        .dark-mode .avatar-inner {
+            border-color: var(--white);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .dark-mode .welcome-badge,
+        .dark-mode .tag,
+        .dark-mode .social-links a {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: var(--gray-200);
+            color: var(--gray-900);
+        }
+
+        .dark-mode .social-links a:hover {
+            background: var(--gray-200);
+            color: var(--gray-900);
+            border-color: var(--gray-400);
+        }
+
+        .dark-mode .cta-btn {
+            background: #3B82F6;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+        }
+
+        .dark-mode .cta-btn:hover {
+            background: #2563EB;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.45);
+        }
+
+        #theme-toggle {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 50;
+            padding: 0.5rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--gray-200);
+            color: var(--gray-600);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+            transition: all 0.2s;
+        }
+        #theme-toggle:hover {
+            color: var(--gray-900);
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
+        .dark-mode #theme-toggle {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: rgba(71, 85, 105, 0.5);
+            color: var(--gray-600);
+        }
+        .dark-mode #theme-toggle:hover {
+            background: var(--gray-200);
+            color: var(--gray-900);
+        }
+        .hidden { display: none; }
+    </style>
 </head>
 
-<body class="antialiased min-h-screen">
-
-    <!-- 3D Background -->
-    <div class="bg-layer" aria-hidden="true">
+<body>
+    <div class="welcome-page">
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+            <svg id="theme-icon-light" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+        </button>
         <div class="bg-gradient"></div>
         <div class="bg-grid"></div>
-        <canvas id="particle-canvas"></canvas>
-        <div id="scene-3d">
-            <div class="shape-3d cube" data-float>
+        <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+        <!-- 3D floating shapes -->
+        <div id="scene-3d" aria-hidden="true">
+            <div class="shape-3d cube" data-float data-base-transform="">
                 <div class="cube-inner">
                     <div class="cube-face"></div>
                     <div class="cube-face"></div>
@@ -32,213 +604,80 @@
                     <div class="cube-face"></div>
                 </div>
             </div>
-            <div class="shape-3d ring" data-float></div>
-            <div class="shape-3d sphere" data-float></div>
-            <div class="shape-3d sphere-2" data-float></div>
-            <div class="shape-3d prism" data-float></div>
+            <div class="shape-3d ring" data-float data-base-transform=""></div>
+            <div class="shape-3d sphere" data-float data-base-transform=""></div>
+            <div class="shape-3d prism" data-float data-base-transform=""></div>
+            <div class="shape-3d dot-cluster" data-float data-base-transform="">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <div class="hero-wrapper">
+            <div id="hero-card">
+                <div class="avatar-frame reveal">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-inner">
+                        <img src="avatar.jpg" alt="Pantawee Thammakhun">
+                    </div>
+                </div>
+
+                <div class="welcome-badge reveal">
+                    <span class="pulse"></span>
+                    WELCOME
+                </div>
+
+                <h1 class="hero-title reveal">Pantawee Thammakhun</h1>
+                <p class="hero-subtitle reveal">Lead UI/UX Designer & Frontend Developer</p>
+                <p class="hero-desc reveal">
+                    ยินดีต้อนรับสู่ E-Portfolio ของผม — พื้นที่แสดงผลงาน ทักษะ และการเติบโตในสายงาน Digital Industry
+                </p>
+
+                <div class="tags reveal">
+                    <span class="tag">Java</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML & CSS</span>
+                    <span class="tag">Database</span>
+                    <span class="tag">UI/UX</span>
+                </div>
+
+                <a href="portfolio.html" class="cta-btn reveal">
+                    เข้าชม Portfolio
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </a>
+
+                <div class="social-links reveal">
+                    <a href="https://github.com/Safebabyz" target="_blank" rel="noopener" title="GitHub">GH</a>
+                    <a href="mailto:safe23177@gmail.com" title="Email">@</a>
+                    <a href="../../index.html" title="QuadraCraft Home">Q</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+            <span>Enter</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
         </div>
     </div>
 
-    <div class="page-content">
-
-        <!-- Sticky Nav -->
-        <header class="glass-nav">
-            <div class="max-w-4xl mx-auto px-5 sm:px-6 py-3.5 flex items-center justify-between">
-                <a href="../../index.html"
-                    class="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-900 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                    </svg>
-                    Welcome
-                </a>
-                <nav class="hidden sm:flex items-center gap-5 text-xs text-gray-500">
-                    <a href="#about" class="hover:text-gray-900 transition-colors">About</a>
-                    <a href="#skills" class="hover:text-gray-900 transition-colors">Skills</a>
-                    <a href="#projects" class="hover:text-gray-900 transition-colors">Projects</a>
-                </nav>
-                <div class="flex items-center gap-4">
-                    <span class="text-xs font-medium text-gray-400 hidden sm:block">Portfolio</span>
-                    <button id="theme-toggle"
-                        class="p-1.5 rounded-full bg-white/80 border border-gray-200 text-gray-600 hover:text-gray-900 shadow-sm transition-all flex items-center justify-center"
-                        aria-label="Toggle Dark Mode">
-                        <svg id="theme-icon-light" class="hidden" xmlns="http://www.w3.org/2000/svg" width="16"
-                            height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                        <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <main class="max-w-4xl mx-auto px-5 sm:px-6 py-8 sm:py-12 space-y-8 sm:space-y-10 pb-16">
-
-            <!-- Hero / About -->
-            <section id="about" class="glass-card p-6 sm:p-8 section-reveal">
-                <div class="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-8">
-                    <div class="avatar-ring-wrap mx-auto sm:mx-0">
-                        <div class="avatar-ring"></div>
-                        <div class="avatar-img">
-                            <img src="avatar.jpg" alt="Pantawee Thammakhun" class="w-full h-full object-cover object-top">
-                        </div>
-                    </div>
-                    <div class="flex-1 text-center sm:text-left">
-                        <p class="section-label mb-2">About Me</p>
-                        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900"
-                            style="font-family: 'Space Grotesk', sans-serif;">Pantawee Thammakhun</h1>
-                        <p class="text-base text-indigo-500 font-medium mt-1">Lead UI/UX Designer & Frontend Developer</p>
-                        <p class="text-sm text-gray-600 mt-4 leading-relaxed max-w-2xl">
-                            ยินดีต้อนรับสู่พื้นที่เก็บผลงานและการเติบโตของผมในสายงาน Digital Industry
-                            มุ่งเน้นการออกแบบดีไซน์และพัฒนาเว็บไซต์อย่างมีประสิทธิภาพ โดยมีความชำนาญในด้าน
-                            Frontend Developer & UI/UX Designer ร่วมกับทักษะด้าน Java, JavaScript, HTML, CSS และ Database
-                        </p>
-                        <div class="flex flex-wrap justify-center sm:justify-start gap-2 mt-5">
-                            <span class="stat-chip">🎨 Member 3</span>
-                            <span class="stat-chip">QuadraCraft Studio</span>
-                            <span class="stat-chip">Lead UI/UX Designer</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact -->
-            <section class="section-reveal">
-                <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
-                    <a href="mailto:safe23177@gmail.com" class="contact-pill">📧 safe23177@gmail.com</a>
-                    <a href="https://github.com/Safebabyz" target="_blank" rel="noopener" class="contact-pill">🐙 GitHub (Safebabyz)</a>
-                    <a href="../../index.html" class="contact-pill">🏠 QuadraCraft Home</a>
-                </div>
-            </section>
-
-            <!-- Skills -->
-            <section id="skills" class="glass-card p-6 sm:p-8 section-reveal">
-                <div class="flex items-center justify-between mb-6">
-                    <div>
-                        <p class="section-label mb-1">Expertise</p>
-                        <h2 class="section-title">Skills</h2>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="skill-group">
-                        <h3 class="text-sm font-semibold text-gray-900 mb-3">Programming</h3>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3 class="text-sm font-semibold text-gray-900 mb-3">Web Development</h3>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                            <span class="skill-tag">UX/UI Design</span>
-                            <span class="skill-tag">Git / GitHub</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3 class="text-sm font-semibold text-gray-900 mb-3">Data & Backend</h3>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="skill-tag">Database</span>
-                            <span class="skill-tag">SQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3 class="text-sm font-semibold text-gray-900 mb-3">Soft Skills</h3>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="skill-tag">Teamwork</span>
-                            <span class="skill-tag">Problem-solving</span>
-                            <span class="skill-tag">Creative Design</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- GitHub -->
-            <section class="glass-card p-6 sm:p-8 section-reveal">
-                <p class="section-label mb-1">Activity</p>
-                <h2 class="section-title mb-5">GitHub Contributions</h2>
-                <div class="rounded-xl border border-gray-200/80 bg-white/60 overflow-x-auto p-3">
-                    <img src="https://ghchart.rshah.org/1fa409/Safebabyz" alt="GitHub Contributions Chart"
-                        class="w-full min-w-[600px] h-auto" />
-                </div>
-            </section>
-
-            <!-- Projects & Experience -->
-            <section id="projects" class="glass-card p-6 sm:p-8 section-reveal">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-6">
-                    <div>
-                        <p class="section-label mb-1">Work</p>
-                        <h2 class="section-title">Featured Projects & Contributions</h2>
-                    </div>
-                    <span
-                        class="text-xs bg-white/80 border border-gray-200 text-gray-500 px-2.5 py-1 rounded-full w-fit">ผลงานและประวัติการทำงาน</span>
-                </div>
-                <div class="space-y-4">
-                    <div class="glass-card-inner p-5">
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-base font-semibold text-gray-900">QuadraCraft Design System & UI/UX</h3>
-                            <span class="text-xs bg-indigo-500/10 text-indigo-500 font-medium px-2 py-0.5 rounded">Design & Frontend</span>
-                        </div>
-                        <p class="text-xs text-gray-600 leading-relaxed">
-                            การวางโครงสร้าง Design Token, Color Palette, Glassmorphic Component และการออกแบบ UI/UX สำหรับเว็บบล็อกของทีม QuadraCraft Studio
-                        </p>
-                        <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span class="skill-tag">UI/UX</span>
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                            <span class="skill-tag">JavaScript</span>
-                        </div>
-                    </div>
-
-                    <div class="glass-card-inner p-5">
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-base font-semibold text-gray-900">Java Database Application</h3>
-                            <span class="text-xs bg-indigo-500/10 text-indigo-500 font-medium px-2 py-0.5 rounded">Java & Database</span>
-                        </div>
-                        <p class="text-xs text-gray-600 leading-relaxed">
-                            การเขียนโปรแกรมด้วยภาษา Java ร่วมกับการออกแบบฐานข้อมูลเพื่อการจัดการและประมวลผลข้อมูลอย่างเป็นระบบ
-                        </p>
-                        <div class="flex flex-wrap gap-1.5 mt-3">
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Database</span>
-                            <span class="skill-tag">SQL</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- Footer -->
-        <footer class="relative z-10 border-t border-gray-200/60 bg-white/50 backdrop-blur-sm">
-            <div
-                class="max-w-4xl mx-auto px-5 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
-                <span>© 2026 Pantawee Thammakhun</span>
-                <a href="../../index.html" class="hover:text-gray-700 transition-colors">← Back to Welcome</a>
-            </div>
-        </footer>
-    </div>
-
+    <script src="js/welcome.js"></script>
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const iconLight = document.getElementById('theme-icon-light');
         const iconDark = document.getElementById('theme-icon-dark');
         const root = document.documentElement;
-
+        
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
             root.classList.remove('dark-mode');
             iconLight.classList.remove('hidden');
             iconDark.classList.add('hidden');
         }
-
+        
         themeToggle.addEventListener('click', () => {
             root.classList.toggle('dark-mode');
             if (root.classList.contains('dark-mode')) {
@@ -252,7 +691,6 @@
             }
         });
     </script>
-    <script src="js/portfolio-bg.js"></script>
 </body>
 
 </html>
