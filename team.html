@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuadraCraft Studio Team — ทีมผู้เชี่ยวชาญ 4 ด้าน: Product, Architecture, Design, Engineering">
+  <title>Our Team — QuadraCraft Studio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Shared Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    /* ── Page-specific styles ── */
+    .team-page-hero {
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--navbar-height);
+      background: var(--gradient-hero-bg);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .team-page-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(59,130,246,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .team-page-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-page-hero__label {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-electric-blue);
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.2);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-5);
+    }
+
+    .team-page-hero__title {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      font-weight: 700;
+      color: var(--color-crisp-white);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: var(--space-5);
+    }
+
+    .team-page-hero__subtitle {
+      font-size: var(--text-lg);
+      color: var(--color-slate-gray);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Stats Bar ── */
+    .team-stats {
+      background: var(--color-surface-navy);
+      border-top: 1px solid var(--color-elevated);
+      border-bottom: 1px solid var(--color-elevated);
+      padding: var(--space-8) 0;
+    }
+
+    .team-stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+      text-align: center;
+    }
+
+    .team-stats__item {
+      padding: var(--space-4);
+    }
+
+    .team-stats__number {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 700;
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      margin-bottom: var(--space-1);
+    }
+
+    .team-stats__label {
+      font-size: var(--text-sm);
+      color: var(--color-slate-dim);
+    }
+
+    /* ── Team Members Grid ── */
+    .team-members-section {
+      padding: var(--space-20) 0;
+      background: var(--color-deep-void);
+    }
+
+    .team-members__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+
+    /* ── Profile Card ── */
+    .profile-card {
+      background: var(--color-surface-navy);
+      border: 1px solid var(--color-elevated);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: border-color var(--duration-normal) ease, transform var(--duration-normal) ease, box-shadow var(--duration-normal) ease;
+      position: relative;
+    }
+
+    .profile-card:hover {
+      border-color: rgba(59,130,246,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(59,130,246,0.08);
+    }
+
+    .profile-card__accent-bar {
+      height: 4px;
+      width: 100%;
+      background: var(--gradient-brand);
+    }
+
+    .profile-card--pm .profile-card__accent-bar    { background: linear-gradient(90deg, #F59E0B, #F97316); }
+    .profile-card--sa .profile-card__accent-bar    { background: linear-gradient(90deg, #6366F1, #8B5CF6); }
+    .profile-card--design .profile-card__accent-bar { background: linear-gradient(90deg, #3B82F6, #06B6D4); }
+    .profile-card--dev .profile-card__accent-bar   { background: linear-gradient(90deg, #22C55E, #10B981); }
+
+    .profile-card__body {
+      padding: var(--space-8);
+    }
+
+    .profile-card__top {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-5);
+      margin-bottom: var(--space-6);
+    }
+
+    .profile-card__avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid var(--color-elevated);
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white;
+      position: relative;
+    }
+
+    .profile-card--pm .profile-card__avatar {
+      background: linear-gradient(135deg, #F59E0B, #F97316);
+    }
+    .profile-card--sa .profile-card__avatar {
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+    }
+    .profile-card--design .profile-card__avatar {
+      background: linear-gradient(135deg, #3B82F6, #06B6D4);
+    }
+    .profile-card--dev .profile-card__avatar {
+      background: linear-gradient(135deg, #22C55E, #10B981);
+    }
+
+    .profile-card__avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .profile-card__info { flex: 1; }
+
+    .profile-card__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--color-electric-blue);
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.2);
+      padding: 2px var(--space-2);
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-2);
+    }
+
+    .profile-card--pm    .profile-card__badge { color: #F59E0B; background: rgba(245,158,11,0.08); border-color: rgba(245,158,11,0.2); }
+    .profile-card--sa    .profile-card__badge { color: #6366F1; background: rgba(99,102,241,0.08); border-color: rgba(99,102,241,0.2); }
+    .profile-card--design .profile-card__badge { color: #3B82F6; background: rgba(59,130,246,0.08); border-color: rgba(59,130,246,0.2); }
+    .profile-card--dev   .profile-card__badge { color: #22C55E; background: rgba(34,197,94,0.08); border-color: rgba(34,197,94,0.2); }
+
+    .profile-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-crisp-white);
+      margin-bottom: var(--space-1);
+      line-height: 1.2;
+    }
+
+    .profile-card__role {
+      font-size: var(--text-sm);
+      color: var(--color-slate-gray);
+    }
+
+    .profile-card__bio {
+      font-size: var(--text-sm);
+      color: var(--color-slate-dim);
+      line-height: 1.7;
+      margin-bottom: var(--space-5);
+    }
+
+    .profile-card__skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-6);
+    }
+
+    .skill-pill {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-slate-gray);
+      background: var(--color-elevated);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+    }
+
+    .profile-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--color-elevated);
+      gap: var(--space-3);
+    }
+
+    .profile-card__contact {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .profile-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      background: var(--color-elevated);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--color-slate-gray);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      transition: all var(--duration-fast) ease;
+    }
+
+    .profile-contact-btn:hover {
+      background: var(--color-electric-blue);
+      border-color: var(--color-electric-blue);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .profile-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-electric-blue);
+      text-decoration: none;
+      transition: gap var(--duration-fast) ease, color var(--duration-fast) ease;
+    }
+
+    .profile-card__cta:hover {
+      gap: var(--space-3);
+      color: var(--color-cyan-pulse);
+    }
+
+    .profile-card__cta svg {
+      transition: transform var(--duration-fast) ease;
+    }
+
+    .profile-card__cta:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* ── Back nav ── */
+    .back-nav {
+      padding: var(--space-6) 0;
+      background: var(--color-surface-navy);
+      border-bottom: 1px solid var(--color-elevated);
+    }
+
+    .back-nav__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--color-slate-dim);
+      text-decoration: none;
+      transition: color var(--duration-fast) ease;
+    }
+
+    .back-nav__link:hover {
+      color: var(--color-crisp-white);
+    }
+
+    /* ── Footer ── */
+    .team-footer {
+      background: var(--color-surface-navy);
+      border-top: 1px solid var(--color-elevated);
+      padding: var(--space-10) 0;
+      text-align: center;
+    }
+
+    .team-footer__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: var(--text-xl);
+      color: var(--color-crisp-white);
+      text-decoration: none;
+      margin-bottom: var(--space-4);
+    }
+
+    .team-footer__logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      background: var(--gradient-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: white;
+    }
+
+    .team-footer__copy {
+      font-size: var(--text-sm);
+      color: var(--color-slate-dim);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .team-members__grid {
+        grid-template-columns: 1fr;
+      }
+      .team-stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-card__top { flex-direction: column; }
+      .profile-card__avatar { width: 64px; height: 64px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo" aria-label="QuadraCraft Studio Home">
+        <span class="navbar__logo-icon">Q</span>
+        <span>QuadraCraft</span>
+      </a>
+      <div class="navbar__links" id="navLinks">
+        <a href="index.html#services" class="navbar__link">Services</a>
+        <a href="index.html#case-studies" class="navbar__link">Works</a>
+        <a href="team.html" class="navbar__link" style="color: var(--color-electric-blue);">Team</a>
+        <a href="index.html#contact" class="navbar__link">Contact</a>
+        <a href="index.html#contact" class="navbar__cta desktop-only">
+          Start a Project
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#services" class="navbar__link">Services</a>
+    <a href="index.html#case-studies" class="navbar__link">Works</a>
+    <a href="team.html" class="navbar__link">Team</a>
+    <a href="index.html#contact" class="navbar__link">Contact</a>
+    <a href="index.html#contact" class="navbar__cta">Start a Project</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="team-page-hero">
+    <div class="container">
+      <span class="team-page-hero__label">
+        <span class="pulse-dot"></span>
+        The Quadra Squad
+      </span>
+      <h1 class="team-page-hero__title">
+        Meet Our <span class="text-gradient">Team</span>
+      </h1>
+      <p class="team-page-hero__subtitle">
+        สี่ศาสตร์ในทีมเดียว — ตั้งแต่กลยุทธ์ผลิตภัณฑ์ สถาปัตยกรรมระบบ การออกแบบ ไปจนถึงวิศวกรรมซอฟต์แวร์
+        <br>เพื่อสร้าง Digital Solution ที่ยั่งยืนและทรงพลัง
+      </p>
+    </div>
+  </section>
+
+  <!-- ── STATS BAR ── -->
+  <div class="team-stats">
+    <div class="container">
+      <div class="team-stats__grid">
+        <div class="team-stats__item">
+          <span class="team-stats__number">4</span>
+          <span class="team-stats__label">Core Disciplines</span>
+        </div>
+        <div class="team-stats__item">
+          <span class="team-stats__number">5+</span>
+          <span class="team-stats__label">Tech Skills</span>
+        </div>
+        <div class="team-stats__item">
+          <span class="team-stats__number">1</span>
+          <span class="team-stats__label">Unified Vision</span>
+        </div>
+        <div class="team-stats__item">
+          <span class="team-stats__number">∞</span>
+          <span class="team-stats__label">Possibilities</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TEAM MEMBERS ── -->
+  <section class="team-members-section">
+    <div class="container">
+      <div style="text-align:center; margin-bottom: 0;">
+        <span class="section-eyebrow" style="justify-content:center;">All Members</span>
+        <h2 class="section-title">QuadraCraft Studio Team</h2>
+        <p class="section-subtitle">คลิกที่การ์ดเพื่อดู Portfolio ของแต่ละคนได้เลยครับ</p>
+      </div>
+
+      <div class="team-members__grid">
+
+        <!-- ── MEMBER 1: PM/PO ── -->
+        <div class="profile-card profile-card--pm reveal">
+          <div class="profile-card__accent-bar"></div>
+          <div class="profile-card__body">
+            <div class="profile-card__top">
+              <div class="profile-card__avatar">PM</div>
+              <div class="profile-card__info">
+                <span class="profile-card__badge">Member 1 · PM/PO</span>
+                <h3 class="profile-card__name">Member 1</h3>
+                <p class="profile-card__role">Product Owner / Project Manager</p>
+              </div>
+            </div>
+            <p class="profile-card__bio">
+              ขับเคลื่อนวิสัยทัศน์ผลิตภัณฑ์ วางแผน Roadmap และประสานงานทีมให้ส่งมอบงานได้ตรงเวลา
+              มีทักษะในการวิเคราะห์ความต้องการและบริหารโครงการอย่างมีประสิทธิภาพ
+            </p>
+            <div class="profile-card__skills">
+              <span class="skill-pill">Project Management</span>
+              <span class="skill-pill">Product Strategy</span>
+              <span class="skill-pill">Agile / Scrum</span>
+              <span class="skill-pill">Roadmap Planning</span>
+            </div>
+            <div class="profile-card__footer">
+              <div class="profile-card__contact">
+                <span style="font-size: var(--text-xs); color: var(--color-slate-dim);">ติดต่อ</span>
+              </div>
+              <a href="portfolios/member1-pm/index.html" class="profile-card__cta">
+                View Portfolio
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MEMBER 2: SA ── -->
+        <div class="profile-card profile-card--sa reveal reveal-delay-1">
+          <div class="profile-card__accent-bar"></div>
+          <div class="profile-card__body">
+            <div class="profile-card__top">
+              <div class="profile-card__avatar">
+                <img src="portfolios/member2-sa/avatart.JPG" alt="Aukit Tantisuparak">
+              </div>
+              <div class="profile-card__info">
+                <span class="profile-card__badge">Member 2 · System Analyst</span>
+                <h3 class="profile-card__name">Aukit Tantisuparak</h3>
+                <p class="profile-card__role">System Analyst / Software Architect</p>
+              </div>
+            </div>
+            <p class="profile-card__bio">
+              ออกแบบสถาปัตยกรรมระบบ Data Flow และข้อกำหนดทางเทคนิค
+              มุ่งเน้น Frontend Developer & UX/UI Designer และพัฒนาทักษะในด้าน Backend & DevOps
+            </p>
+            <div class="profile-card__skills">
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">HTML / CSS</span>
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Database</span>
+              <span class="skill-pill">UX/UI Design</span>
+            </div>
+            <div class="profile-card__footer">
+              <div class="profile-card__contact">
+                <a href="mailto:aukit.tanti@gmail.com" class="profile-contact-btn" title="Email">@</a>
+                <a href="https://github.com/aukit-study" target="_blank" rel="noopener" class="profile-contact-btn" title="GitHub">GH</a>
+              </div>
+              <a href="portfolios/member2-sa/index.html" class="profile-card__cta">
+                View Portfolio
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MEMBER 3: Designer ── -->
+        <div class="profile-card profile-card--design reveal reveal-delay-2">
+          <div class="profile-card__accent-bar"></div>
+          <div class="profile-card__body">
+            <div class="profile-card__top">
+              <div class="profile-card__avatar">
+                <img src="portfolios/member3-designer/avatar.jpg" alt="Pantawee Thammakhun">
+              </div>
+              <div class="profile-card__info">
+                <span class="profile-card__badge">Member 3 · Lead Designer</span>
+                <h3 class="profile-card__name">Pantawee Thammakhun</h3>
+                <p class="profile-card__role">Lead UI/UX Designer & Frontend Developer</p>
+              </div>
+            </div>
+            <p class="profile-card__bio">
+              สร้างสรรค์ระบบ Visual Design, Design Token และ User Experience ที่สวยงามและใช้งานง่าย
+              มีความชำนาญในด้าน Java, JavaScript, HTML, CSS และ Database
+            </p>
+            <div class="profile-card__skills">
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">HTML / CSS</span>
+              <span class="skill-pill">Database</span>
+              <span class="skill-pill">UI/UX Design</span>
+            </div>
+            <div class="profile-card__footer">
+              <div class="profile-card__contact">
+                <a href="mailto:safe23177@gmail.com" class="profile-contact-btn" title="Email">@</a>
+                <a href="https://github.com/Safebabyz" target="_blank" rel="noopener" class="profile-contact-btn" title="GitHub">GH</a>
+              </div>
+              <a href="portfolios/member3-designer/index.html" class="profile-card__cta">
+                View Portfolio
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MEMBER 4: Dev/QA ── -->
+        <div class="profile-card profile-card--dev reveal reveal-delay-3">
+          <div class="profile-card__accent-bar"></div>
+          <div class="profile-card__body">
+            <div class="profile-card__top">
+              <div class="profile-card__avatar">QA</div>
+              <div class="profile-card__info">
+                <span class="profile-card__badge">Member 4 · Dev & QA</span>
+                <h3 class="profile-card__name">Member 4</h3>
+                <p class="profile-card__role">Senior Developer & QA Lead</p>
+              </div>
+            </div>
+            <p class="profile-card__bio">
+              พัฒนา Frontend ที่แข็งแกร่งและตรวจสอบคุณภาพซอฟต์แวร์ทุกระดับ
+              เพื่อให้มั่นใจว่าทุก Pixel สมบูรณ์แบบและทุก Feature ทำงานได้อย่างราบรื่น
+            </p>
+            <div class="profile-card__skills">
+              <span class="skill-pill">Frontend Dev</span>
+              <span class="skill-pill">QA Testing</span>
+              <span class="skill-pill">CI/CD</span>
+              <span class="skill-pill">Performance</span>
+            </div>
+            <div class="profile-card__footer">
+              <div class="profile-card__contact">
+                <span style="font-size: var(--text-xs); color: var(--color-slate-dim);">ติดต่อ</span>
+              </div>
+              <a href="portfolios/member4-dev/index.html" class="profile-card__cta">
+                View Portfolio
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="team-footer">
+    <div class="container">
+      <a href="index.html" class="team-footer__logo">
+        <span class="team-footer__logo-icon">Q</span>
+        QuadraCraft Studio
+      </a>
+      <p class="team-footer__copy">© 2026 QuadraCraft Studio Co., Ltd. — Four Disciplines. One Vision.</p>
+      <div style="margin-top: var(--space-4);">
+        <a href="index.html" style="font-size: var(--text-sm); color: var(--color-electric-blue); text-decoration: none;">← กลับหน้าหลัก</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
