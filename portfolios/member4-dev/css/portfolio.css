@@ -1016,7 +1016,7 @@ html.dark .section-link, body.dark .section-link {
 }
 
 /* ── Back Link ── */
-.back-to-quadracraft {
+.back-to-quadracrew {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -1031,7 +1031,7 @@ html.dark .section-link, body.dark .section-link {
     text-decoration: none;
 }
 
-.back-to-quadracraft:hover {
+.back-to-quadracrew:hover {
     color: var(--color-accent);
     border-color: var(--color-accent);
 }
