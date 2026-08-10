@@ -380,6 +380,38 @@
             transform: translateX(4px);
         }
 
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            transform: translateZ(35px);
+        }
+
+        .cta-btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            background: rgba(255, 255, 255, 0.5);
+            border: 1.5px solid var(--gray-200);
+            border-radius: 14px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .cta-btn-outline:hover {
+            background: var(--white);
+            border-color: var(--gray-400);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
+
         .social-links {
             display: flex;
             justify-content: center;
@@ -541,6 +573,15 @@
         .dark-mode .cta-btn:hover {
             background: var(--accent-light);
         }
+        .dark-mode .cta-btn-outline {
+            color: var(--white);
+            background: rgba(30, 41, 59, 0.5);
+            border-color: rgba(71, 85, 105, 0.5);
+        }
+        .dark-mode .cta-btn-outline:hover {
+            background: rgba(30, 41, 59, 0.9);
+            border-color: var(--gray-400);
+        }
 
         #theme-toggle {
             position: absolute;
@@ -674,12 +715,20 @@
                     <span class="tag">GPAX 3.60</span>
                 </div>
 
-                <a href="portfolio.html" class="cta-btn reveal">
-                    เข้าชม Portfolio
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                </a>
+                <div class="btn-group reveal">
+                    <a href="portfolio.html" class="cta-btn">
+                        เข้าชม Portfolio
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                    <a href="../../index.html" class="cta-btn-outline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                        </svg>
+                        กลับไปหน้าหลัก
+                    </a>
+                </div>
 
                 <div class="social-links reveal">
                     <a href="https://github.com/aukit-study" target="_blank" rel="noopener" title="GitHub">GH</a>
