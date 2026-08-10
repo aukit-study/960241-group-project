@@ -185,6 +185,32 @@ img {
     justify-content: space-between;
 }
 
+.port-nav__left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.port-nav__back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    transition: all 0.2s ease;
+}
+
+.port-nav__back-btn:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translateX(-2px);
+}
+
 .port-nav__logo {
     font-size: 1.15rem;
     font-weight: 700;
