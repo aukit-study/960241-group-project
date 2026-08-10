@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="th" class="dark-mode">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio ของ Phurin Chaiprasan — Senior Frontend Engineer & QA Lead ที่ QuadraCraft Studio">
+    <title>Welcome | Phurin Chaiprasan</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23080D1A' stroke='%2322C55E' stroke-width='4'/><text x='50' y='72' font-family='monospace' font-size='55' font-weight='bold' fill='%2322C55E' text-anchor='middle'>P</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --deep-void: #080D1A;
+            --surface: #0F172A;
+            --elevated: #1E293B;
+            --electric-blue: #3B82F6;
+            --cyan-pulse: #06B6D4;
+            --green-dev: #22C55E;
+            --green-dim: #10B981;
+            --crisp-white: #F8FAFC;
+            --slate: #94A3B8;
+            --slate-dim: #64748B;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Inter', 'JetBrains Mono', sans-serif;
+            background: var(--deep-void);
+            color: var(--crisp-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .welcome-page {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Background */
+        .bg-gradient {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(34, 197, 94, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 90%, rgba(6, 182, 212, 0.06) 0%, transparent 55%),
+                linear-gradient(180deg, #080D1A 0%, #0F172A 50%, #0A1628 100%);
+        }
+
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(30, 41, 59, 0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(30, 41, 59, 0.4) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 75%);
+        }
+
+        #particle-canvas {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        /* Floating code snippets */
+        .floating-code {
+            position: absolute;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: rgba(34, 197, 94, 0.15);
+            pointer-events: none;
+            white-space: pre;
+            line-height: 1.6;
+        }
+
+        .floating-code:nth-child(1) {
+            top: 12%;
+            left: 8%;
+            animation: float-code 20s ease-in-out infinite;
+        }
+        .floating-code:nth-child(2) {
+            top: 60%;
+            right: 8%;
+            animation: float-code 18s ease-in-out infinite reverse;
+        }
+        .floating-code:nth-child(3) {
+            bottom: 15%;
+            left: 15%;
+            animation: float-code 22s ease-in-out infinite 2s;
+        }
+        .floating-code:nth-child(4) {
+            top: 25%;
+            right: 12%;
+            animation: float-code 16s ease-in-out infinite 1s;
+        }
+
+        @keyframes float-code {
+            0%, 100% { transform: translateY(0) rotate(-1deg); opacity: 0.15; }
+            50% { transform: translateY(-20px) rotate(1deg); opacity: 0.25; }
+        }
+
+        /* Terminal dots */
+        .terminal-float {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .terminal-float--green {
+            background: rgba(34, 197, 94, 0.3);
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+            top: 20%;
+            left: 20%;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        .terminal-float--cyan {
+            background: rgba(6, 182, 212, 0.3);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+            bottom: 30%;
+            right: 15%;
+            animation: pulse-glow 4s ease-in-out infinite 1s;
+        }
+        .terminal-float--blue {
+            background: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+            top: 50%;
+            left: 10%;
+            animation: pulse-glow 3.5s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.5); opacity: 0.8; }
+        }
+
+        /* Hero card */
+        .hero-wrapper {
+            position: relative;
+            z-index: 10;
+            perspective: 1000px;
+            padding: 1.5rem;
+        }
+
+        #hero-card {
+            position: relative;
+            width: min(480px, 92vw);
+            padding: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 16px;
+            box-shadow:
+                0 0 0 1px rgba(30, 41, 59, 0.5),
+                0 24px 80px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(34, 197, 94, 0.05);
+            transform-style: preserve-3d;
+            transition: box-shadow 0.4s ease;
+            overflow: hidden;
+        }
+
+        /* Terminal bar */
+        .terminal-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 16px;
+            background: rgba(8, 13, 26, 0.8);
+            border-bottom: 1px solid rgba(30, 41, 59, 0.6);
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .terminal-dot--red { background: #EF4444; }
+        .terminal-dot--yellow { background: #F59E0B; }
+        .terminal-dot--green { background: #22C55E; }
+
+        .terminal-title {
+            margin-left: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--slate-dim);
+            letter-spacing: 0.05em;
+        }
+
+        .card-body {
+            padding: 2rem 2rem 1.75rem;
+            text-align: center;
+        }
+
+        /* Avatar */
+        .avatar-frame {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.25rem;
+            transform: translateZ(40px);
+        }
+
+        .avatar-ring {
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            background: conic-gradient(from 180deg, #1E293B, #22C55E, #06B6D4, #1E293B);
+            animation: rotate-ring 8s linear infinite;
+        }
+
+        @keyframes rotate-ring {
+            to { transform: rotate(360deg); }
+        }
+
+        .avatar-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--deep-void);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .avatar-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Status badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.3rem 0.75rem;
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 999px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--green-dev);
+            margin-bottom: 1rem;
+        }
+
+        .status-badge .pulse {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--green-dev);
+            animation: pulse-dot 2s ease infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.85); }
+        }
+
+        .hero-name {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(1.6rem, 5vw, 2rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            color: var(--crisp-white);
+            margin-bottom: 0.25rem;
+            transform: translateZ(30px);
+        }
+
+        .hero-name-th {
+            font-size: 0.85rem;
+            color: var(--slate-dim);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .hero-role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--green-dev);
+            margin-bottom: 0.75rem;
+            transform: translateZ(25px);
+        }
+
+        .hero-desc {
+            font-size: 0.82rem;
+            line-height: 1.65;
+            color: var(--slate);
+            max-width: 380px;
+            margin: 0 auto 1.25rem;
+            transform: translateZ(20px);
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+            transform: translateZ(15px);
+        }
+
+        .tag {
+            padding: 0.25rem 0.65rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--slate);
+            background: var(--elevated);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 6px;
+        }
+
+        /* CTA */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #22C55E 0%, #10B981 100%);
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transform: translateZ(35px);
+            box-shadow:
+                0 4px 14px rgba(34, 197, 94, 0.3),
+                0 0 0 1px rgba(34, 197, 94, 0.1);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateZ(35px) translateY(-2px);
+            box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35), 0 0 40px rgba(34, 197, 94, 0.1);
+        }
+
+        .cta-btn svg {
+            transition: transform 0.25s ease;
+        }
+
+        .cta-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Social links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.65rem;
+            margin-top: 1.25rem;
+            transform: translateZ(10px);
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: var(--elevated);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--slate);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--green-dev);
+            border-color: rgba(34, 197, 94, 0.3);
+            background: rgba(34, 197, 94, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Scroll hint */
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--slate-dim);
+            z-index: 5;
+            animation: fade-bounce 2.5s ease infinite;
+        }
+
+        @keyframes fade-bounce {
+            0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 0.8; transform: translateX(-50%) translateY(6px); }
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes reveal-up {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Terminal typing in background */
+        .bg-terminal {
+            position: absolute;
+            bottom: 8%;
+            right: 5%;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6rem;
+            color: rgba(34, 197, 94, 0.2);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .bg-terminal .line {
+            opacity: 0;
+            animation: terminal-line 8s ease-in-out infinite;
+        }
+        .bg-terminal .line:nth-child(1) { animation-delay: 0s; }
+        .bg-terminal .line:nth-child(2) { animation-delay: 1.5s; }
+        .bg-terminal .line:nth-child(3) { animation-delay: 3s; }
+        .bg-terminal .line:nth-child(4) { animation-delay: 4.5s; }
+
+        @keyframes terminal-line {
+            0%, 100% { opacity: 0; }
+            15%, 85% { opacity: 1; }
+        }
+
+        @media (max-width: 640px) {
+            .floating-code { display: none; }
+            .bg-terminal { display: none; }
+            #hero-card { border-radius: 14px; }
+            .card-body { padding: 1.5rem 1.25rem 1.5rem; }
+            .scroll-hint { display: none; }
+            .terminal-float { opacity: 0.3; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome-page">
+        <div class="bg-gradient"></div>
+        <div class="bg-grid"></div>
+        <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+        <!-- Floating code snippets -->
+        <div class="floating-code" aria-hidden="true">const server = new Server({
+  port: 3000,
+  host: '0.0.0.0'
+});</div>
+        <div class="floating-code" aria-hidden="true">docker run -d \
+  --name webapp \
+  -p 80:80 nginx</div>
+        <div class="floating-code" aria-hidden="true">ssh titan@192.168.1.100
+sudo systemctl status</div>
+        <div class="floating-code" aria-hidden="true">git push origin main
+✓ All checks passed</div>
+
+        <!-- Floating terminal dots -->
+        <div class="terminal-float terminal-float--green" aria-hidden="true"></div>
+        <div class="terminal-float terminal-float--cyan" aria-hidden="true"></div>
+        <div class="terminal-float terminal-float--blue" aria-hidden="true"></div>
+
+        <!-- Background terminal -->
+        <div class="bg-terminal" aria-hidden="true">
+            <div class="line">$ npm run build</div>
+            <div class="line">✓ Compiled successfully</div>
+            <div class="line">$ docker compose up -d</div>
+            <div class="line">✓ All services running</div>
+        </div>
+
+        <!-- Hero Card -->
+        <div class="hero-wrapper">
+            <div id="hero-card">
+                <div class="terminal-bar">
+                    <span class="terminal-dot terminal-dot--red"></span>
+                    <span class="terminal-dot terminal-dot--yellow"></span>
+                    <span class="terminal-dot terminal-dot--green"></span>
+                    <span class="terminal-title">titan@quadracraft ~ portfolio</span>
+                </div>
+                <div class="card-body">
+                    <div class="avatar-frame reveal">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-inner">
+                            <img src="avatar.JPG" alt="Phurin Chaiprasan">
+                        </div>
+                    </div>
+
+                    <div class="status-badge reveal">
+                        <span class="pulse"></span>
+                        Available for Projects
+                    </div>
+
+                    <h1 class="hero-name reveal">Phurin Chaiprasan</h1>
+                    <p class="hero-name-th reveal">ภูรินท์ ชัยประสาน (ไตตั้น)</p>
+                    <p class="hero-role reveal">Senior Frontend Engineer & QA Lead</p>
+                    <p class="hero-desc reveal">
+                        Building robust infrastructure and solving complex technical challenges.
+                        DevOps Engineer & IT Support Specialist.
+                    </p>
+
+                    <div class="tags reveal">
+                        <span class="tag">CAMT · DII</span>
+                        <span class="tag">Chiang Mai University</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">DevOps</span>
+                    </div>
+
+                    <a href="portfolio.html" class="cta-btn reveal" id="cta-enter">
+                        เข้าชม Portfolio
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+
+                    <div class="social-links reveal">
+                        <a href="https://github.com/Zr-TxNK" target="_blank" rel="noopener" title="GitHub">GH</a>
+                        <a href="mailto:phurin.cps@gmail.com" title="Email">@</a>
+                        <a href="https://medium.com/@phurin.cps" target="_blank" rel="noopener" title="Medium">M</a>
+                        <a href="../../team.html" title="Team Profiles">T</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+            <span>Enter</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </div>
+
+    <script src="js/welcome.js"></script>
+</body>
+
+</html>

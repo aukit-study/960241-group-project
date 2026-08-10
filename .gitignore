@@ -15,3 +15,7 @@ dist/
 build/
 .cache/
 *.log
+
+# Port folder / Reference
+port/
+

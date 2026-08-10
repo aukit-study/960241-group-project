@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="description"
+        content="E-Portfolio ของ Phurin Chaiprasan (ภูรินท์ ชัยประสาน) — Junior DevOps Engineer & IT Support Specialist, CAMT Chiang Mai University">
+    <meta name="keywords" content="DevOps, IT Support, Linux, Docker, Python, Server Administration">
+    <meta property="og:title" content="Phurin Chaiprasan (Titan) | DevOps Engineer">
+    <meta property="og:description" content="Junior DevOps Engineer & IT Support Specialist">
+    <meta property="og:type" content="website">
+    <title>Portfolio | Phurin Chaiprasan (Titan)</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0a0f' stroke='%239d8af2' stroke-width='4'/><text x='50' y='72' font-family='monospace' font-size='55' font-weight='bold' fill='%239d8af2' text-anchor='middle'>T</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=NTR&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/portfolio.css">
+</head>
+
+<body>
+
+    <!-- ═══════════ NAVBAR ═══════════ -->
+    <header class="port-nav">
+        <nav class="port-nav__inner">
+            <div class="port-nav__content">
+                <a href="index.html" class="port-nav__logo">T x N K</a>
+
+                <!-- Desktop nav links -->
+                <div class="port-nav__links">
+                    <a href="#home" class="port-nav__link active">Home</a>
+                    <a href="#about" class="port-nav__link">About</a>
+                    <a href="#projects" class="port-nav__link">Projects</a>
+                    <a href="#blog" class="port-nav__link">Blog</a>
+                </div>
+
+                <div class="port-nav__controls">
+                    <button class="port-nav__theme-btn" id="themeToggle" title="Toggle theme">🌙</button>
+                    <button class="port-nav__menu-btn" id="menuToggle" aria-label="Toggle menu">☰</button>
+                </div>
+            </div>
+
+            <!-- Mobile dropdown -->
+            <div class="port-nav__mobile" id="mobileMenu">
+                <a href="#home" class="port-nav__mobile-link active">Home</a>
+                <a href="#about" class="port-nav__mobile-link">About</a>
+                <a href="#projects" class="port-nav__mobile-link">Projects</a>
+                <a href="#blog" class="port-nav__mobile-link">Blog</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ═══════════ MAIN CONTENT ═══════════ -->
+    <main class="page-container">
+
+        <!-- ─── HERO (Home) ─── -->
+        <section id="home" class="hero-section reveal-up">
+            <div class="hero-avatar">
+                <img src="avatar.JPG" alt="Phurin Chaiprasan">
+            </div>
+
+            <h1 class="hero-name">Phurin Chaiprasan</h1>
+            <p class="hero-nickname">(ไตตั้น / Titan)</p>
+            <p class="hero-role">Junior DevOps Engineer & IT Support Specialist</p>
+            <p class="hero-tagline">Building robust infrastructure and solving complex technical challenges</p>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="https://github.com/Zr-TxNK" target="_blank" rel="noopener noreferrer" class="social-icon"
+                    title="GitHub">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://medium.com/@phurin.cps" target="_blank" rel="noopener noreferrer"
+                    class="social-icon" title="Medium">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                </a>
+                <a href="mailto:phurin.cps@gmail.com" class="social-icon social-icon--mail" title="Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="divider-fancy">
+            <span class="divider-line"></span>
+            <span class="divider-star">✦</span>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- ─── Quick Links ─── -->
+        <section class="section reveal-up">
+            <div class="quick-links">
+                <a href="#about" class="card card-hover quick-link">
+                    <span class="quick-link__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </span>
+                    <span class="quick-link__label">About</span>
+                </a>
+                <a href="#projects" class="card card-hover quick-link">
+                    <span class="quick-link__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                            <path
+                                d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+                        </svg>
+                    </span>
+                    <span class="quick-link__label">Projects</span>
+                </a>
+                <a href="#blog" class="card card-hover quick-link">
+                    <span class="quick-link__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" x2="8" y1="13" y2="13" />
+                            <line x1="16" x2="8" y1="17" y2="17" />
+                            <line x1="10" x2="8" y1="9" y2="9" />
+                        </svg>
+                    </span>
+                    <span class="quick-link__label">Blog</span>
+                </a>
+                <a href="mailto:phurin.cps@gmail.com" class="card card-hover quick-link">
+                    <span class="quick-link__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                    </span>
+                    <span class="quick-link__label">Contact</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="divider-fancy">
+            <span class="divider-line"></span>
+            <span class="divider-star">◆</span>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- ─── Skills Preview ─── -->
+        <section class="section reveal-up">
+            <h2 class="section-heading">Skills</h2>
+            <div class="skills-grid">
+                <!-- System & OS -->
+                <div class="card card-hover">
+                    <div class="skill-card__header">
+                        <div class="skill-card__icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="14" x="2" y="3" rx="2" />
+                                <line x1="8" x2="16" y1="21" y2="21" />
+                                <line x1="12" x2="12" y1="17" y2="21" />
+                            </svg>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 class="skill-card__title">System & OS</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Linux (Ubuntu Server)</span>
+                                <span class="skill-tag">CLI</span>
+                                <span class="skill-tag">Windows Troubleshooting</span>
+                                <span class="skill-tag">Shell Scripting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hardware -->
+                <div class="card card-hover">
+                    <div class="skill-card__header">
+                        <div class="skill-card__icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="16" height="16" x="4" y="4" rx="2" />
+                                <rect width="6" height="6" x="9" y="9" rx="1" />
+                                <path d="M15 2v2" /><path d="M15 20v2" />
+                                <path d="M2 15h2" /><path d="M2 9h2" />
+                                <path d="M20 15h2" /><path d="M20 9h2" />
+                                <path d="M9 2v2" /><path d="M9 20v2" />
+                            </svg>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 class="skill-card__title">Hardware</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Server Assembly (Xeon E5-1650v4, Dual E5-2699v3)</span>
+                                <span class="skill-tag">PC Build & Diagnostics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programming -->
+                <div class="card card-hover">
+                    <div class="skill-card__header">
+                        <div class="skill-card__icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 class="skill-card__title">Programming</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python (OpenCV)</span>
+                                <span class="skill-tag">Object-Oriented Programming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="card card-hover">
+                    <div class="skill-card__header">
+                        <div class="skill-card__icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                            </svg>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 class="skill-card__title">Tools</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">tmux</span>
+                                <span class="skill-tag">SSH</span>
+                                <span class="skill-tag">Remote Desktop</span>
+                                <span class="skill-tag">rClone</span>
+                                <span class="skill-tag">FTP Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="divider-fancy">
+            <span class="divider-line"></span>
+            <span class="divider-star">★</span>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- ═══════════ ABOUT SECTION ═══════════ -->
+        <section id="about" class="section reveal-up">
+            <div style="margin-bottom: 1.5rem; text-align: center;">
+                <h2 class="section-heading">About Me</h2>
+                <p class="section-subtitle">ภูรินท์ ชัยประสาน — Junior DevOps Engineer & IT Support Specialist</p>
+            </div>
+
+            <!-- Bio Card -->
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <h3 style="font-size:1.25rem; font-weight:700; color:var(--color-text-primary); margin-bottom:0.35rem;">Phurin Chaiprasan</h3>
+                <p style="color:#7c3aed; font-weight:500; font-size:0.95rem; margin-bottom:1rem;">Junior DevOps Engineer & IT Support Specialist</p>
+                <div style="display:flex; flex-direction:column; gap:0.75rem; color:var(--color-text-secondary); line-height:1.65; font-size:0.95rem;">
+                    <p>สร้างและดูแล Infrastructure ที่แข็งแกร่ง พร้อมแก้ปัญหา Technical Challenges ที่ซับซ้อน
+                        มีประสบการณ์ในการจัดการ Linux Server, Docker, Networking และ System Administration</p>
+                    <p>รับผิดชอบพัฒนาระบบ Computer Vision ด้วย Python & OpenCV สำหรับโปรเจกต์มหาวิทยาลัย
+                        รวมถึงจัดการ Home Lab Server สำหรับการทดสอบและ hosting ในสภาพแวดล้อมจริง</p>
+                    <p>ปัจจุบันศึกษาอยู่ที่ CAMT Chiang Mai University สาขา Digital Industry Integration (DII)
+                        และทำงาน Freelance ด้าน IT Support & Server Administration</p>
+                </div>
+            </div>
+
+            <!-- Education Subsection -->
+            <h3 style="font-size:1.15rem; font-weight:700; color:var(--color-text-primary); margin-bottom:1rem;">Education</h3>
+            <div class="edu-list">
+                <div class="card">
+                    <div class="edu-card__inner">
+                        <div class="edu-icon">🎓</div>
+                        <div class="edu-info">
+                            <h3>Chiang Mai University</h3>
+                            <p>Bachelor of Science (CAMT - Digital Industry Integration)</p>
+                            <div class="edu-period">May 2025 – Present</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="edu-card__inner">
+                        <div class="edu-icon">🏫</div>
+                        <div class="edu-info">
+                            <h3>Montfort College School</h3>
+                            <p>Sci-Math Program</p>
+                            <div class="edu-period">May 2019 – Jan 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="divider-fancy">
+            <span class="divider-line"></span>
+            <span class="divider-star">✦</span>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- ═══════════ PROJECTS SECTION ═══════════ -->
+        <section id="projects" class="section reveal-up">
+            <div style="margin-bottom: 1.5rem; text-align: center;">
+                <h2 class="section-heading">Projects & Experience</h2>
+                <p class="section-subtitle">ผลงานและประสบการณ์ทั้งหมดในด้าน DevOps, IT Support และ Development</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-tab active" data-filter="all">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 7V5c0-1.1.9-2 2-2h2" /><path d="M17 3h2c1.1 0 2 .9 2 2v2" /><path
+                            d="M21 17v2c0 1.1-.9 2-2 2h-2" /><path d="M7 21H5c-1.1 0-2-.9-2-2v-2" />
+                        <rect width="7" height="5" x="7" y="7" rx="1" /><rect width="7" height="5" x="10" y="12"
+                            rx="1" />
+                    </svg>
+                    All
+                </button>
+                <button class="filter-tab" data-filter="personal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                    Personal
+                </button>
+                <button class="filter-tab" data-filter="university">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 10 3 12 0v-5" />
+                    </svg>
+                    University
+                </button>
+                <button class="filter-tab" data-filter="freelance">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                    </svg>
+                    Freelance
+                </button>
+                <button class="filter-tab" data-filter="community">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    Community
+                </button>
+            </div>
+
+            <div class="divider-fancy" style="margin: 1.5rem 0;">
+                <span class="divider-line"></span>
+                <span class="divider-star">✦</span>
+                <span class="divider-line"></span>
+            </div>
+
+            <!-- Projects List -->
+            <div class="projects-list" id="projectsList">
+                <!-- Project 1: Lab Server -->
+                <div class="card card-hover" data-category="personal">
+                    <div class="project-header">
+                        <div class="project-header__left">
+                            <div class="project-icon">🏠</div>
+                            <div style="min-width:0;">
+                                <h3 class="project-title">Lab Server Administrator</h3>
+                                <p class="project-role">Self-Hosted Home Lab</p>
+                            </div>
+                        </div>
+                        <div class="project-badges">
+                            <span class="project-badge project-badge--period">June 2025 – Present</span>
+                            <span class="project-badge project-badge--category">Personal</span>
+                        </div>
+                    </div>
+                    <ul class="project-desc">
+                        <li><span class="bullet">✦</span><span>Designed and built a Home Lab server (Xeon E5-1650v4 and Dual Xeon E5-2699v3) simulating an Enterprise environment</span></li>
+                        <li><span class="bullet">✦</span><span>Deployed and managed Ubuntu Linux servers, handling user permissions, package management, and system security via CLI</span></li>
+                        <li><span class="bullet">✦</span><span>Utilized Xeon E5-1650v4 to host 24/7 game servers (Minecraft, Terraria), optimizing performance with Chunky and managing processes with tmux</span></li>
+                        <li><span class="bullet">✦</span><span>Configured Xeon E5-2699v3 for website hosting and Nginx reverse proxy</span></li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="project-tag">Linux</span>
+                        <span class="project-tag">Server</span>
+                        <span class="project-tag">tmux</span>
+                        <span class="project-tag">Networking</span>
+                        <span class="project-tag">Security</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Maeram -->
+                <div class="card card-hover" data-category="university">
+                    <div class="project-header">
+                        <div class="project-header__left">
+                            <div class="project-icon">🎓</div>
+                            <div style="min-width:0;">
+                                <h3 class="project-title">Maeram Water Level Monitoring</h3>
+                                <p class="project-role">Python Developer (University Project)</p>
+                            </div>
+                        </div>
+                        <div class="project-badges">
+                            <span class="project-badge project-badge--period">Dec 2025 – Present</span>
+                            <span class="project-badge project-badge--category">University</span>
+                        </div>
+                    </div>
+                    <ul class="project-desc">
+                        <li><span class="bullet">✦</span><span>Developed an automated water level monitoring system using Python, OpenCV, and Numpy to process CCTV footage</span></li>
+                        <li><span class="bullet">✦</span><span>Implemented color detection algorithms to identify staff gauges within specific ROIs and convert pixel data into metric measurements</span></li>
+                        <li><span class="bullet">✦</span><span>Built a continuous pipeline to process images every 60 seconds and transmit payload data via REST API</span></li>
+                        <li><span class="bullet">✦</span><span>Developed a Vanilla HTML/JS frontend dashboard to fetch and visualize real-time and historical water levels</span></li>
+                        <li><span class="bullet">✦</span><span>Applied OOP and SOLID principles to ensure clean, maintainable, and scalable code architecture</span></li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">OpenCV</span>
+                        <span class="project-tag">OOP</span>
+                        <span class="project-tag">Computer Vision</span>
+                        <span class="project-tag">REST API</span>
+                        <span class="project-tag">Vanilla JS</span>
+                        <span class="project-tag">Numpy</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Freelance IT -->
+                <div class="card card-hover" data-category="freelance">
+                    <div class="project-header">
+                        <div class="project-header__left">
+                            <div class="project-icon">💼</div>
+                            <div style="min-width:0;">
+                                <h3 class="project-title">Freelance IT Support</h3>
+                                <p class="project-role">Independent Contractor</p>
+                            </div>
+                        </div>
+                        <div class="project-badges">
+                            <span class="project-badge project-badge--period">Jan 2025 – Present</span>
+                            <span class="project-badge project-badge--category">Freelance</span>
+                        </div>
+                    </div>
+                    <ul class="project-desc">
+                        <li><span class="bullet">✦</span><span>Network Traffic Optimization: Diagnosed and resolved router conflicts between high-performance servers, preventing packet collisions</span></li>
+                        <li><span class="bullet">✦</span><span>PC/Server Maintenance: Assembled and maintained workstations focusing on hardware compatibility, thermal management, and BIOS configuration for 24/7 operation</span></li>
+                        <li><span class="bullet">✦</span><span>System Troubleshooting: Performed Root Cause Analysis to resolve complex hardware and software issues, ensuring system reliability</span></li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="project-tag">IT Support</span>
+                        <span class="project-tag">Networking</span>
+                        <span class="project-tag">Troubleshooting</span>
+                        <span class="project-tag">Hardware</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Teenmu SMP -->
+                <div class="card card-hover" data-category="freelance">
+                    <div class="project-header">
+                        <div class="project-header__left">
+                            <div class="project-icon">💼</div>
+                            <div style="min-width:0;">
+                                <h3 class="project-title">Teenmu SMP</h3>
+                                <p class="project-role">Project Manager & Server Engineer</p>
+                            </div>
+                        </div>
+                        <div class="project-badges">
+                            <span class="project-badge project-badge--period">Dec 2025 – Present</span>
+                            <span class="project-badge project-badge--category">Freelance</span>
+                        </div>
+                    </div>
+                    <ul class="project-desc">
+                        <li><span class="bullet">✦</span><span>Project Management: Planned, tracked progress, and coordinated with the team to complete server setup and launch</span></li>
+                        <li><span class="bullet">✦</span><span>Server Configuration: Co-setup server infrastructure, tuned performance, and managed core systems for stability</span></li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="project-tag">Project Management</span>
+                        <span class="project-tag">Server Setup</span>
+                        <span class="project-tag">Minecraft</span>
+                        <span class="project-tag">System Administration</span>
+                    </div>
+                </div>
+
+                <!-- Project 5: MC Vtuber -->
+                <div class="card card-hover" data-category="community">
+                    <div class="project-header">
+                        <div class="project-header__left">
+                            <div class="project-icon">👥</div>
+                            <div style="min-width:0;">
+                                <h3 class="project-title">MC Vtuber</h3>
+                                <p class="project-role">Project Manager & IT Support</p>
+                            </div>
+                        </div>
+                        <div class="project-badges">
+                            <span class="project-badge project-badge--period">Apr 2025 – Present</span>
+                            <span class="project-badge project-badge--category">Community</span>
+                        </div>
+                    </div>
+                    <ul class="project-desc">
+                        <li><span class="bullet">✦</span><span>Project Management: Oversaw the VTuber community server project, handled ad-hoc issues, and facilitated the team</span></li>
+                        <li><span class="bullet">✦</span><span>IT Support & Troubleshooting: Received and resolved both front-end and back-end issues to ensure smooth experience for players and streamers</span></li>
+                        <li><span class="bullet">✦</span><span>Backend Support: Assisted Core Admin team with server system management during emergencies or when needed</span></li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="project-tag">Project Management</span>
+                        <span class="project-tag">IT Support</span>
+                        <span class="project-tag">Troubleshooting</span>
+                        <span class="project-tag">Technical Support</span>
+                    </div>
+                </div>
+
+                <!-- Project 6: Hub.vtuberthai -->
+                <div class="card card-hover" data-category="community">
+                    <div class="project-header">
+                        <div class="project-header__left">
+                            <div class="project-icon">👥</div>
+                            <div style="min-width:0;">
+                                <h3 class="project-title">Hub.vtuberthai.com</h3>
+                                <p class="project-role">Project Manager & Web Developer</p>
+                            </div>
+                        </div>
+                        <div class="project-badges">
+                            <span class="project-badge project-badge--period">Mar 2025 – Present</span>
+                            <span class="project-badge project-badge--category">Community</span>
+                        </div>
+                    </div>
+                    <ul class="project-desc">
+                        <li><span class="bullet">✦</span><span>Project Management: Planned the platform structure, defined specs and features, and managed the development timeline to meet VTuber community needs</span></li>
+                        <li><span class="bullet">✦</span><span>Web Development: Responsible for coding and developing the frontend system, handling UI/UX to ensure the website runs fast, stable, and supports a large number of users</span></li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="project-tag">Web Development</span>
+                        <span class="project-tag">Project Management</span>
+                        <span class="project-tag">Frontend</span>
+                        <span class="project-tag">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="divider-fancy">
+            <span class="divider-line"></span>
+            <span class="divider-star">✦</span>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- ═══════════ BLOG SECTION ═══════════ -->
+        <section id="blog" class="section reveal-up">
+            <div style="margin-bottom: 1.5rem; text-align: center;">
+                <h2 class="section-heading">Blog</h2>
+                <p class="section-subtitle">เรื่องราวจากประสบการณ์ในโลก Tech</p>
+            </div>
+
+            <!-- Coming Soon Card -->
+            <div class="card" style="text-align:center; padding: 2.5rem 1.5rem;">
+                <div style="display:flex; justify-content:center; margin-bottom:1.25rem;">
+                    <div style="width:4.5rem; height:4.5rem; border-radius:1rem; background:linear-gradient(to bottom right, #C5BAFF, #C4D9FF); display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">
+                        🚧
+                    </div>
+                </div>
+                <h3 style="font-size:1.3rem; font-weight:700; color:var(--color-text-primary); margin-bottom:0.5rem;">Coming Soon</h3>
+                <p style="font-size:0.95rem; color:var(--color-text-muted); max-width:28rem; margin:0 auto 0.75rem;">
+                    กำลังเตรียมบทความใหม่อยู่ครับ ระหว่างนี้สามารถอ่านบทความบน Medium ได้เลย
+                </p>
+                <p style="font-size:0.9rem; color:var(--color-text-secondary); max-width:28rem; margin:0 auto 1.5rem;">
+                    มีบทความเกี่ยวกับ Linux, Docker และ Python/OpenCV รออยู่!
+                </p>
+                <a href="https://medium.com/@phurin.cps" target="_blank" rel="noopener noreferrer"
+                    style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.5rem; background:#7c3aed; color:white; font-weight:500; border-radius:0.75rem; transition:opacity 0.2s; font-size:0.95rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                    Read on Medium
+                </a>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="divider-fancy">
+            <span class="divider-line"></span>
+            <span class="divider-star">✦</span>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- Back to QuadraCraft -->
+        <div style="text-align: center; padding: 1rem 0 1.5rem;">
+            <a href="../../team.html" class="back-to-quadracraft">
+                ← Back to QuadraCraft Studio
+            </a>
+        </div>
+    </main>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="port-footer">
+        <div class="port-footer__inner">
+            <div class="port-footer__card">
+                <div class="port-footer__top">
+                    <div class="port-footer__info">
+                        <p class="port-footer__name">Phurin Chaiprasan (Titan)</p>
+                        <p class="port-footer__role">Junior DevOps Engineer & IT Support</p>
+                    </div>
+                    <div class="port-footer__socials">
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/phurin.chaiprasan" target="_blank" rel="noopener noreferrer"
+                            class="port-footer__social-link" title="Facebook">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@TxNK-Ch" target="_blank" rel="noopener noreferrer"
+                            class="port-footer__social-link" title="YouTube">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                        <!-- X/Twitter -->
+                        <a href="https://x.com/TxNK09" target="_blank" rel="noopener noreferrer"
+                            class="port-footer__social-link" title="X">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <!-- Discord -->
+                        <a href="https://discord.com/users/769467923613483019" target="_blank" rel="noopener noreferrer"
+                            class="port-footer__social-link" title="Discord">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="port-footer__bottom">
+                    <p class="port-footer__copy">© 2025 Phurin Chaiprasan. Built with ❤️</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/portfolio.js"></script>
+</body>
+
+</html>
