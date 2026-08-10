@@ -1,5 +1,5 @@
 # System Analyst & Tech Lead Report 
-**Project:** QuadraCraft Studio
+**Project:** QuadraCrew Studio
 **Role:** Member 2 (System Analyst / Tech Lead)
 **Prepared By:** Aukit Tantisuparak
 
@@ -22,7 +22,7 @@ graph TD
 ```
 
 ## 2. User Flow (เส้นทางการใช้งานของผู้ใช้)
-การออกแบบ User Flow สำหรับผู้ใช้ที่เข้ามาเยี่ยมชมเว็บไซต์ QuadraCraft Studio:
+การออกแบบ User Flow สำหรับผู้ใช้ที่เข้ามาเยี่ยมชมเว็บไซต์ QuadraCrew Studio:
 
 1. **Landing & Hero Section:** ผู้ใช้เข้าสู่ `index.html` จะพบกับวิสัยทัศน์และจุดเด่นของทีม 
 2. **Explore Services:** เลื่อนลงมาเพื่อดูบริการหลัก (Enterprise POS, Web/Mobile Apps, Cloud, BI)

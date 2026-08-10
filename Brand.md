@@ -1,4 +1,4 @@
-# 🏢 QuadraCraft Studio — Brand Guidelines
+# 🏢 QuadraCrew Studio — Brand Guidelines
 
 > เอกสารนี้สรุปแบรนด์บริษัทจำลองของกลุ่ม เพื่อให้สมาชิกทุกคนออกแบบและพัฒนาเว็บไซต์ไปในทิศทางเดียวกัน
 
@@ -8,10 +8,10 @@
 
 | รายการ | รายละเอียด |
 |:---|:---|
-| **ชื่อบริษัท** | **QuadraCraft Studio Co., Ltd.** |
-| **ชื่อเต็ม (TH)** | บริษัท ควอดราคราฟต์ สตูดิโอ จำกัด |
-| **ความหมายของชื่อ** | **Quadra** (4 เสาหลัก / 4 สหายร่วมอุดมการณ์ PM, SA, UI/UX, Dev) + **Craft** (การคราฟต์และรังสรรค์ซอฟต์แวร์ด้วยความประณีตระดับงานศิลป์) |
-| **สโลแกน** | *"Four Disciplines. One Vision. Limitless Digital Craftsmanship."* |
+| **ชื่อบริษัท** | **QuadraCrew Studio Co., Ltd.** |
+| **ชื่อเต็ม (TH)** | บริษัท ควอดราครูว์ สตูดิโอ จำกัด |
+| **ความหมายของชื่อ** | **Quadra** (4 เสาหลัก / 4 สหายร่วมอุดมการณ์ PM, SA, UI/UX, Dev) + **Crew** (ทีมงานมืออาชีพผู้ร่วมสร้างสรรค์และขับเคลื่อนเทคโนโลยีไปด้วยกัน) |
+| **สโลแกน** | *"Four Disciplines. One Vision. Limitless Digital Synergy."* |
 | **ประเภทธุรกิจ** | Premium Software House & Tech Agency — รับพัฒนาซอฟต์แวร์และโซลูชันดิจิทัลครบวงจร |
 | **ก่อตั้ง** | 2569 (จำลอง) |
 | **ที่ตั้ง** | กรุงเทพมหานคร, ประเทศไทย |
@@ -97,7 +97,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 
 ---
 
-## 4. โครงสร้างทีม (4 Pillars of QuadraCraft)
+## 4. โครงสร้างทีม (4 Pillars of QuadraCrew)
 
 | ลำดับ | ตำแหน่งในบริษัท | บทบาทในโปรเจค | หน้าเว็บที่รับผิดชอบ |
 |:---:|:---|:---|:---|
@@ -112,9 +112,9 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 
 1. **Brand Identity**: ใช้ Color Tokens และ Typography ตามเอกสารนี้ เพื่อให้เว็บทุกหน้าของทุกคนดูกลมกลืนเป็นมืออาชีพ
 2. **Shared Navigation & Footer**: ใช้โครงสร้าง Navbar/Footer มาตรฐานเดียวกัน เชื่อมโยงได้ทุกหน้าโดยไม่มี Dead Link
-3. **Personal Portfolio Freedom**: หน้า Portfolio เดี่ยวของแต่ละคนสามารถใส่ความคิดสร้างสรรค์และลูกเล่น Animation ได้เต็มที่ โดยคงลิงก์ปุ่ม **"← Back to QuadraCraft"** กลับมายังหน้าหลัก
+3. **Personal Portfolio Freedom**: หน้า Portfolio เดี่ยวของแต่ละคนสามารถใส่ความคิดสร้างสรรค์และลูกเล่น Animation ได้เต็มที่ โดยคงลิงก์ปุ่ม **"← Back to QuadraCrew"** กลับมายังหน้าหลัก
 4. **Quality & Responsiveness**: รองรับหน้าจอทุกขนาด (Mobile 375px+, Tablet 768px+, Desktop 1024px+) และมี Accessible Focus States
 
 ---
 
-*สร้างและอัปเดต: สิงหาคม 2569 | QuadraCraft Studio*
+*สร้างและอัปเดต: สิงหาคม 2569 | QuadraCrew Studio*

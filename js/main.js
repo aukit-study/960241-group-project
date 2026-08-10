@@ -1,5 +1,5 @@
 /* ========================================================================
-   QuadraCraft Studio — Main JavaScript (main.js)
+   QuadraCrew Studio — Main JavaScript (main.js)
    Interactive terminal, smooth scroll, mobile menu, counters, scroll reveal
    ======================================================================== */
 
@@ -157,7 +157,7 @@ function initTerminal() {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const lines = [
-    { type: 'prompt', text: '~/quadracraft $ ', cmd: 'npm run build:nexpos' },
+    { type: 'prompt', text: '~/quadracrew $ ', cmd: 'npm run build:nexpos' },
     { type: 'info', text: '⚡ Building NexPOS 360 v4.2.0...' },
     { type: 'dim', text: '' },
     { type: 'dim', text: '  ├── Compiling POS transaction engine' },
@@ -172,7 +172,7 @@ function initTerminal() {
     { type: 'info', text: '📦 Bundle size: 142KB (gzipped)' },
     { type: 'success', text: '🚀 Deployed to 13,247 nodes — all green' },
     { type: 'dim', text: '' },
-    { type: 'prompt', text: '~/quadracraft $ ', cmd: '' },
+    { type: 'prompt', text: '~/quadracrew $ ', cmd: '' },
   ];
 
   // If reduced motion, show all at once
